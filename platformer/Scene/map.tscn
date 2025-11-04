@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7cpsabecass6"]
+[gd_scene load_steps=5 format=3 uid="uid://csr1wrjy6naqc"]
 
-[ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="2_81yfc"]
+[ext_resource type="PackedScene" path="res://Scene/platformeMovante.tscn" id="2_81yfc"]
+[ext_resource type="PackedScene" path="res://Scene/plateformQuiCasse.tscn" id="2_ex5br"]
+[ext_resource type="Texture2D" uid="uid://bvhor87nuqbm4" path="res://asset/tile_0009.png" id="3_5mejs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s12we"]
 
 [node name="Map" type="Node2D"]
 
@@ -14,3 +18,18 @@ position = Vector2(222, 242)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(996, 306)
+
+[node name="PlatformCassante" parent="." instance=ExtResource("2_ex5br")]
+position = Vector2(157, 386)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(257, 229)
+scale = Vector2(2.75, 2.75)
+shape = SubResource("RectangleShape2D_s12we")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(257, 229)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("3_5mejs")
