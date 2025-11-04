@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyawnqlxdarjb"]
+
+[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_gwfd0"]
+[ext_resource type="Texture2D" uid="uid://8788jl84yuv3" path="res://asset/UI/buttonLong_blue_pressed.png" id="2_w4jke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4jke"]
+bg_color = Color(0.08469362, 0.004814495, 0.11150662, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Play" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 269.0
+offset_top = 76.0
+offset_right = 477.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gwfd0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4jke")
+text = "Play"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 207.0
+offset_bottom = 61.0
+texture_pressed = ExtResource("2_w4jke")
