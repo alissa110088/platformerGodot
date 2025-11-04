@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://d272anvirluuf"]
+
+[ext_resource type="Script" uid="uid://cw71ggbvhjodm" path="res://script/platforme_movante.gd" id="1_hu42t"]
+[ext_resource type="Texture2D" uid="uid://cpic6xh05a6yt" path="res://asset/tile_0250.png" id="1_q05bv"]
+[ext_resource type="Texture2D" uid="uid://bov5pvt15hj7j" path="res://asset/tile_0251.png" id="2_hu42t"]
+[ext_resource type="Texture2D" uid="uid://badj863bxvs5w" path="res://asset/tile_0252.png" id="3_l5e7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q05bv"]
+size = Vector2(212, 41)
+
+[node name="PlatformeMovante" type="StaticBody2D" node_paths=PackedStringArray("target1", "target2")]
+script = ExtResource("1_hu42t")
+target1 = NodePath("")
+target2 = NodePath("")
+speed = 200.0
+
+[node name="visual" type="Node2D" parent="."]
+scale = Vector2(2.205, 2.555)
+
+[node name="Sprite2D" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(9, 11)
+texture = ExtResource("1_q05bv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(25, 11)
+texture = ExtResource("2_hu42t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(41, 11)
+texture = ExtResource("2_hu42t")
+
+[node name="Sprite2D4" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(57, 11)
+texture = ExtResource("2_hu42t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(73, 11)
+texture = ExtResource("2_hu42t")
+
+[node name="Sprite2D6" type="Sprite2D" parent="visual"]
+texture_filter = 1
+position = Vector2(89, 11)
+texture = ExtResource("3_l5e7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(108, 28.5)
+shape = SubResource("RectangleShape2D_q05bv")

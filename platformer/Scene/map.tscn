@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7cpsabecass6"]
+
+[ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="2_81yfc"]
+
+[node name="Map" type="Node2D"]
+
+[node name="PlatformeMovante" parent="." node_paths=PackedStringArray("target1", "target2") instance=ExtResource("2_81yfc")]
+position = Vector2(657, 345)
+target1 = NodePath("../Marker2D")
+target2 = NodePath("../Marker2D2")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(222, 242)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(996, 306)
