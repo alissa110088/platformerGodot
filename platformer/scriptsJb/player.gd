@@ -11,7 +11,7 @@ const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Timer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +51,12 @@ func die() -> void:
 	
 func shoot() -> void:
 	var projectile: Arrow = projectile_scene.instantiate()
-
 	projectile.global_position = $ArrowAnchor/Origin.global_position
 	get_parent().add_child(projectile)
 	projectile.global_rotation = $ArrowAnchor/Origin.global_rotation
 	
+
 	
+func _on_timer_timeout() -> void:
+	can_shoot = true
 	

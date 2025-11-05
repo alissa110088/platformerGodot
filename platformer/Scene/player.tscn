@@ -21,4 +21,8 @@ shape = SubResource("RectangleShape2D_y8w33")
 [node name="ArrowAnchor" type="Node2D" parent="."]
 
 [node name="Origin" type="Marker2D" parent="ArrowAnchor"]
-position = Vector2(95, 1)
+position = Vector2(110, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
