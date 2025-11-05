@@ -8,6 +8,7 @@ var _is_dead: bool = false
 @export var _canvas_layer: CanvasLayer
 @export var _animated_sprite: AnimatedSprite2D
 @export var baseLife : int = 100
+@export var _animated_sprite_bow: AnimatedSprite2D
 var can_shoot: bool = true
 var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
@@ -15,6 +16,9 @@ const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_actualLife = baseLife
+	$Timer.start()
+	_animated_sprite_bow.play("idle")
+	$PlayerAnimator.play("idle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,6 +51,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shoot") and can_shoot == true:
 		shoot()
 		can_shoot = false
+		
+		
+		
 	
 	move_and_slide()	
 	
@@ -56,11 +63,18 @@ func die() -> void:
 	_canvas_layer.add_child(scene)	
 	
 func shoot() -> void:
+	_animated_sprite_bow.play("shoot")
+	await _animated_sprite_bow.animation_finished
 	var projectile: Arrow = projectile_scene.instantiate()
-
 	projectile.global_position = $ArrowAnchor/Origin.global_position
 	get_parent().add_child(projectile)
 	projectile.global_rotation = $ArrowAnchor/Origin.global_rotation
+	_animated_sprite_bow.play("idle")
+	$PlayerAnimator.play("idle")
+
+	
+func _on_timer_timeout() -> void:
+	can_shoot = true
 
 func TakeDamage(value : int) -> void :
 	_actualLife -= value
@@ -68,3 +82,5 @@ func TakeDamage(value : int) -> void :
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, 0.25)
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.25)
 	print(_actualLife) 
+	if _actualLife <= 0:
+		die()

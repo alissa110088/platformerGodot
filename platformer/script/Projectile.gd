@@ -7,6 +7,7 @@ var _direction: Vector2
 
 func _physics_process(delta: float) -> void:
 	_direction = Vector2.RIGHT.rotated(global_rotation)
+	
 	var velocity: Vector2 = _direction * speed * delta
 	
 	var collision: KinematicCollision2D = move_and_collide(velocity)
