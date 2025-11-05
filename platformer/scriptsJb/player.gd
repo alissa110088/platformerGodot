@@ -17,6 +17,7 @@ static var check_point_pos: Vector2 = Vector2(193.0, 146.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = false
 	global_position = check_point_pos
 	_actualLife = baseLife
 	$Timer.start()
@@ -64,6 +65,7 @@ func die() -> void:
 	_is_dead = true
 	var scene = _game_over.instantiate()
 	_canvas_layer.add_child(scene)	
+	get_tree().paused = true
 	
 func shoot() -> void:
 	_animated_sprite_bow.play("shoot")

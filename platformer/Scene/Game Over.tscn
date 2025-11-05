@@ -8,6 +8,7 @@ font_size = 50
 [sub_resource type="Theme" id="Theme_e1w6y"]
 
 [node name="GameOver" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
