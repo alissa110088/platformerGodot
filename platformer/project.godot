@@ -41,6 +41,7 @@ shoot={
 [global_group]
 
 Enemy=""
+Player=""
 
 [layer_names]
 
