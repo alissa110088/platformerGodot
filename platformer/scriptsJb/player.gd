@@ -5,6 +5,7 @@ var _gravity : int = 1300
 var _is_dead: bool = false
 @export var jump_impulse: float = 500.0
 @export var _game_over: PackedScene
+@export var _animated_sprite: AnimatedSprite2D
 var can_shoot: bool = true
 
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
@@ -25,9 +26,15 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = Input.get_axis("move_left","move_right") * _speed
 	
+	if velocity.x == 0:
+		_animated_sprite.play("idle")
+	else:
+		_animated_sprite.play("walk")
+	
 	if is_on_floor() 	and Input.is_action_just_pressed("jump"):
 		velocity.y -= jump_impulse + _gravity * delta
 	elif not is_on_floor():
+		_animated_sprite.play("jump")
 		velocity.y += _gravity * delta
 		
 		

@@ -1,27 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://5velm0vs8kmg"]
+[gd_scene load_steps=11 format=3 uid="uid://5velm0vs8kmg"]
 
 [ext_resource type="Script" uid="uid://dxirvx2qrq8vy" path="res://scriptsJb/player.gd" id="1_y8w33"]
 [ext_resource type="PackedScene" uid="uid://exqaeqqybwr3" path="res://Scene/Game Over.tscn" id="2_58ae2"]
-[ext_resource type="Texture2D" uid="uid://bqjwrbgnbf5tn" path="res://icon.svg" id="2_xa75v"]
+[ext_resource type="Texture2D" uid="uid://22gfln7lyiuv" path="res://asset/tile_0260.png" id="3_xa75v"]
+[ext_resource type="Texture2D" uid="uid://bsnbnny63ywjj" path="res://asset/tile_0265.png" id="4_p6qlh"]
+[ext_resource type="Texture2D" uid="uid://bn4c36ixfugus" path="res://asset/tile_0261.png" id="5_2sw5t"]
+[ext_resource type="Texture2D" uid="uid://dktw1c23yswnm" path="res://asset/tile_0264.png" id="6_2sw5t"]
+[ext_resource type="Texture2D" uid="uid://ydkm17dtepng" path="res://asset/tile_0262.png" id="6_ij4jb"]
+[ext_resource type="Texture2D" uid="uid://3pjw28s1w4g" path="res://asset/tile_0263.png" id="7_c68nv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c31lq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xa75v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6qlh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("6_2sw5t")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2sw5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ij4jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c68nv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
-size = Vector2(116, 121)
+size = Vector2(49, 52)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animated_sprite")]
 script = ExtResource("1_y8w33")
 _game_over = ExtResource("2_58ae2")
+_animated_sprite = NodePath("AnimatedSprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xa75v")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_c31lq")
+animation = &"jump"
+frame_progress = 0.87270933
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.5)
+position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="ArrowAnchor" type="Node2D" parent="."]
 
 [node name="Origin" type="Marker2D" parent="ArrowAnchor"]
-position = Vector2(110, 0)
+position = Vector2(27, 1)
 
 [node name="Timer" type="Timer" parent="."]
 
