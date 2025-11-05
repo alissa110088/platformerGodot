@@ -16,3 +16,8 @@ texture = ExtResource("2_xa75v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_y8w33")
+
+[node name="ArrowAnchor" type="Node2D" parent="."]
+
+[node name="Origin" type="Marker2D" parent="ArrowAnchor"]
+position = Vector2(95, 1)
