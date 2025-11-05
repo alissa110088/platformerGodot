@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="2_81yfc"]
-[ext_resource type="PackedScene" uid="uid://cq3fawhwo14lw" path="res://Scene/platformeRebond.tscn" id="3_5mejs"]
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="3_ex5br"]
 [ext_resource type="PackedScene" uid="uid://c542eit1xip81" path="res://Scene/DeathZone.tscn" id="4_5mejs"]
+[ext_resource type="PackedScene" uid="uid://1g8800ajoqbb" path="res://Scene/platformeNormal.tscn" id="4_s12we"]
 
 [node name="Map" type="Node2D"]
 
@@ -21,13 +21,13 @@ position = Vector2(996, 306)
 [node name="Player" parent="." instance=ExtResource("3_ex5br")]
 position = Vector2(193, 146)
 
-[node name="platformeRebond" parent="." instance=ExtResource("3_5mejs")]
-position = Vector2(105, 383)
-
 [node name="DeathZone" parent="." instance=ExtResource("4_5mejs")]
 position = Vector2(446, 462)
 
 [node name="CollisionShape2D" parent="DeathZone" index="0"]
 position = Vector2(162, 56)
+
+[node name="platformeNormal" parent="." instance=ExtResource("4_s12we")]
+position = Vector2(101, 326)
 
 [editable path="DeathZone"]
