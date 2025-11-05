@@ -12,9 +12,11 @@ var _is_dead: bool = false
 var can_shoot: bool = true
 var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
+static var check_point_pos: Vector2 = Vector2(193.0, 146.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_position = check_point_pos
 	_actualLife = baseLife
 	$Timer.start()
 	_animated_sprite_bow.play("idle")
