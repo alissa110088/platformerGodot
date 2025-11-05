@@ -6,13 +6,13 @@ extends StaticBody2D
 @export var _speed: float = 100.0
 
 var _current_target: Marker2D
+var _dir
 
 func _ready():
 	_current_target = _target1
 
 func _physics_process(delta):
-	var _dir = (_current_target.global_position - global_position).normalized()
+	_dir = (_current_target.global_position - global_position).normalized()
 	global_position += _dir * _speed * delta
-
 	if global_position.distance_to(_current_target.global_position) < 2.0:
 		_current_target = _target2 if _current_target == _target1 else _target1

@@ -5,6 +5,7 @@ var _gravity : int = 1300
 var _is_dead: bool = false
 @export var jump_impulse: float = 500.0
 @export var _game_over: PackedScene
+@export var _canvas_layer: CanvasLayer
 @export var _animated_sprite: AnimatedSprite2D
 var can_shoot: bool = true
 
@@ -51,10 +52,7 @@ func _physics_process(delta: float) -> void:
 func die() -> void:
 	_is_dead = true
 	var scene = _game_over.instantiate()
-	owner.add_child(scene)	
-	scene.global_position = get_viewport_rect().size/2
-
-		
+	_canvas_layer.add_child(scene)	
 	
 func shoot() -> void:
 	var projectile: Arrow = projectile_scene.instantiate()
