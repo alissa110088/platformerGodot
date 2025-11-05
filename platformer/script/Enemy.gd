@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var baseLife : int = 30
 @export var animationPlayerReference : AnimationPlayer
 @export var particleReference : GPUParticles2D
+@export var animatedSpriteReference : AnimatedSprite2D 
 
 var _actualTargetPos : Vector2
 var _direction : Vector2
@@ -44,7 +45,6 @@ func CheckDeath() -> void:
 		_canMove = false
 		animationPlayerReference.play("Enemy explode")
 		animationPlayerReference.animation_finished.connect(_on_animation_death_finished)
-		
 func _on_animation_death_finished(anim_name: StringName):
 	get_node("Sprite2D").queue_free()
 	get_node("Area2D").queue_free()

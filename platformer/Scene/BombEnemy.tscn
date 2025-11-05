@@ -1,7 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://e4my1ha11ay1"]
+[gd_scene load_steps=12 format=3 uid="uid://e4my1ha11ay1"]
 
 [ext_resource type="Script" uid="uid://cgidlx8eljm35" path="res://script/BombEnemy.gd" id="1_5nu48"]
-[ext_resource type="Texture2D" uid="uid://dqcbks6h7x6ii" path="res://asset/tile_0240.png" id="2_ksvhl"]
+[ext_resource type="Texture2D" uid="uid://bwog258u36qtx" path="res://asset/tile_0301.png" id="2_noyyh"]
+[ext_resource type="Texture2D" uid="uid://bx8xjugyvihhj" path="res://asset/tile_0302.png" id="3_s1jiq"]
+[ext_resource type="Texture2D" uid="uid://6atpibsmuvge" path="res://asset/tile_0303.png" id="4_u3xyu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjllx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_noyyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s1jiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u3xyu")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
 size = Vector2(10, 9)
@@ -56,17 +75,19 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference") groups=["Enemy"]]
+[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference", "animatedSpriteReference") groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_5nu48")
 damages = 50
 animationPlayerReference = NodePath("AnimationPlayer")
 particleReference = NodePath("GPUParticles2D")
+animatedSpriteReference = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_ksvhl")
+sprite_frames = SubResource("SpriteFrames_bjllx")
+animation = &"Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)

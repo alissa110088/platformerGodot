@@ -1,7 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dchehysuvbio6"]
+[gd_scene load_steps=12 format=3 uid="uid://r6q5fxgfqpl6"]
 
-[ext_resource type="Script" path="res://script/BasicEnemy.gd" id="1_5nu48"]
-[ext_resource type="Texture2D" uid="uid://dqcbks6h7x6ii" path="res://asset/tile_0240.png" id="2_ksvhl"]
+[ext_resource type="Script" uid="uid://dy18m4r1tqje7" path="res://script/BasicEnemy.gd" id="1_5nu48"]
+[ext_resource type="Texture2D" uid="uid://b6xsvwb0plpce" path="res://asset/tile_0241.png" id="2_wegof"]
+[ext_resource type="Texture2D" uid="uid://dvw80xht37gna" path="res://asset/tile_0282.png" id="3_delem"]
+[ext_resource type="Texture2D" uid="uid://b3rtkuw6rwbrn" path="res://asset/tile_0243.png" id="4_bafkl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ye14p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wegof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_delem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bafkl")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
 size = Vector2(10, 9)
@@ -56,17 +75,20 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference") groups=["Enemy"]]
+[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference", "animatedSpriteReference") groups=["Enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_5nu48")
 animationPlayerReference = NodePath("AnimationPlayer")
 particleReference = NodePath("GPUParticles2D")
+animatedSpriteReference = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_ksvhl")
+sprite_frames = SubResource("SpriteFrames_ye14p")
+animation = &"Run"
+frame_progress = 0.8990855
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)

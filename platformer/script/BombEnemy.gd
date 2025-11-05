@@ -1,6 +1,10 @@
 class_name BombEnemy
 extends Enemy
 
+func _ready() -> void:
+	super._ready()
+	animatedSpriteReference.play("Run")
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		TakeDamage(_actualLife)

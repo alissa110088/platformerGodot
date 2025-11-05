@@ -1,7 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhhr5bdggtecg"]
+[gd_scene load_steps=12 format=3 uid="uid://bhhr5bdggtecg"]
 
 [ext_resource type="Script" uid="uid://c2wsdy10eg54f" path="res://script/FlyingEnemy.gd" id="1_b2af3"]
-[ext_resource type="Texture2D" uid="uid://b8fnii4ygjg5i" path="res://asset/tile_0320.png" id="2_b2af3"]
+[ext_resource type="Texture2D" uid="uid://n8gosf8mamek" path="res://asset/tile_0380.png" id="2_oke11"]
+[ext_resource type="Texture2D" uid="uid://3k7srqhq0nmv" path="res://asset/tile_0381.png" id="3_ipfvj"]
+[ext_resource type="Texture2D" uid="uid://curn6hfr54mup" path="res://asset/tile_0382.png" id="4_qtux1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djjdg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oke11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ipfvj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qtux1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oke11")
+}],
+"loop": true,
+"name": &"Shoot",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
 size = Vector2(10, 9)
@@ -56,7 +83,7 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cooldown", "anchor", "animationPlayerReference", "particleReference") groups=["Enemy"]]
+[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cooldown", "anchor", "animationPlayerReference", "particleReference", "animatedSpriteReference") groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_b2af3")
@@ -64,10 +91,13 @@ cooldown = NodePath("Timer")
 anchor = NodePath("Anchor")
 animationPlayerReference = NodePath("AnimationPlayer")
 particleReference = NodePath("GPUParticles2D")
+animatedSpriteReference = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_b2af3")
+sprite_frames = SubResource("SpriteFrames_djjdg")
+animation = &"Idle"
+frame_progress = 0.20014802
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
