@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://5velm0vs8kmg"]
+
+[ext_resource type="Script" uid="uid://dxirvx2qrq8vy" path="res://scriptsJb/player.gd" id="1_y8w33"]
+[ext_resource type="PackedScene" uid="uid://exqaeqqybwr3" path="res://Scene/Game Over.tscn" id="2_58ae2"]
+[ext_resource type="Texture2D" uid="uid://bqjwrbgnbf5tn" path="res://icon.svg" id="2_xa75v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
+size = Vector2(116, 121)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_y8w33")
+_game_over = ExtResource("2_58ae2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xa75v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_y8w33")
+
+[node name="ArrowAnchor" type="Node2D" parent="."]
+
+[node name="Origin" type="Marker2D" parent="ArrowAnchor"]
+position = Vector2(110, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnif8tq0fp78e"]
+
+[ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="1_hpnff"]
+[ext_resource type="PackedScene" uid="uid://dik6k40ggl86a" path="res://Scene/test.tscn" id="2_ckj7f"]
+
+[node name="LucasTest" type="Node2D"]
+
+[node name="Test" parent="." instance=ExtResource("2_ckj7f")]
+position = Vector2(225, 68)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(12, 71)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(333, 78)
+
+[node name="BasicEnemy" parent="." node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("1_hpnff")]
+position = Vector2(96, 68)
+pos1 = NodePath("../Marker2D")
+pos2 = NodePath("../Marker2D2")
