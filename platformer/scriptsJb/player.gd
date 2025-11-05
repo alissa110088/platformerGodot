@@ -7,6 +7,7 @@ var _is_dead: bool = false
 @export var _game_over: PackedScene
 @export var _animated_sprite: AnimatedSprite2D
 @export var baseLife : int = 100
+@export var _animated_sprite_bow: AnimatedSprite2D
 var can_shoot: bool = true
 var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
@@ -47,6 +48,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shoot") and can_shoot == true:
 		shoot()
 		can_shoot = false
+		
+		
+		
 	
 	move_and_slide()	
 	
@@ -59,10 +63,15 @@ func die() -> void:
 		
 	
 func shoot() -> void:
+	_animated_sprite_bow.play("shoot")
+	await _animated_sprite_bow.animation_finished
 	var projectile: Arrow = projectile_scene.instantiate()
 	projectile.global_position = $ArrowAnchor/Origin.global_position
 	get_parent().add_child(projectile)
 	projectile.global_rotation = $ArrowAnchor/Origin.global_rotation
+	
+
+	
 func _on_timer_timeout() -> void:
 	can_shoot = true
 

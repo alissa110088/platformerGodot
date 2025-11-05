@@ -7,15 +7,15 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="PlatformeMovante" parent="." instance=ExtResource("1_t4wiw")]
-position = Vector2(330, 245)
+position = Vector2(330, 246)
 script = null
 
 [node name="PlatformeMovante2" parent="." instance=ExtResource("1_t4wiw")]
-position = Vector2(120, 243)
+position = Vector2(118, 246)
 script = null
 
 [node name="PlatformeMovante3" parent="." instance=ExtResource("1_t4wiw")]
-position = Vector2(757, 248)
+position = Vector2(754, 246)
 script = null
 
 [node name="PlatformeMovante4" parent="." instance=ExtResource("1_t4wiw")]
@@ -23,17 +23,19 @@ position = Vector2(542, 246)
 script = null
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(565, 232)
+position = Vector2(565, 220)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(907, 241)
+position = Vector2(911, 221)
 
 [node name="Player" parent="." instance=ExtResource("2_lusoc")]
-position = Vector2(343, 28)
+position = Vector2(162, 199)
 _game_over = null
 
 [node name="BombEnemy" parent="." node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("3_1t27l")]
-position = Vector2(770, 211)
+position = Vector2(790.00006, 215)
 scale = Vector2(5, 5)
+collision_layer = 9
+collision_mask = 5
 pos1 = NodePath("../Marker2D")
 pos2 = NodePath("../Marker2D2")
