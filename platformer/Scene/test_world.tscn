@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="1_t4wiw"]
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="2_lusoc"]
-[ext_resource type="PackedScene" path="res://Scene/BombEnemy.tscn" id="3_1t27l"]
+[ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="3_1t27l"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,11 +29,10 @@ position = Vector2(565, 220)
 position = Vector2(911, 221)
 
 [node name="Player" parent="." instance=ExtResource("2_lusoc")]
-position = Vector2(162, 199)
-_game_over = null
+position = Vector2(171, 207)
 
 [node name="BombEnemy" parent="." node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("3_1t27l")]
-position = Vector2(790.00006, 215)
+position = Vector2(791, 186.00002)
 scale = Vector2(5, 5)
 collision_layer = 9
 collision_mask = 5

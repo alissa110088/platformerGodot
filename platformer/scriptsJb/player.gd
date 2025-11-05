@@ -16,6 +16,8 @@ const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
 func _ready() -> void:
 	_actualLife = baseLife
 	$Timer.start()
+	_animated_sprite_bow.play("idle")
+	$PlayerAnimator.play("idle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,7 +71,8 @@ func shoot() -> void:
 	projectile.global_position = $ArrowAnchor/Origin.global_position
 	get_parent().add_child(projectile)
 	projectile.global_rotation = $ArrowAnchor/Origin.global_rotation
-	
+	_animated_sprite_bow.play("idle")
+	$PlayerAnimator.play("idle")
 
 	
 func _on_timer_timeout() -> void:
@@ -78,3 +81,5 @@ func _on_timer_timeout() -> void:
 func TakeDamage(value : int) -> void :
 	_actualLife -= value
 	print(_actualLife) 
+	if _actualLife <= 0:
+		die()
