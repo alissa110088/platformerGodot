@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=11 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c542eit1xip81" path="res://Scene/deathZone/DeathZone.tscn" id="4_5mejs"]
 [ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/plateform/platformeMovante.tscn" id="4_s12we"]
 [ext_resource type="PackedScene" uid="uid://b6urhxwr48gvj" path="res://Scene/deathZone/PiqueQuiTombe.tscn" id="7_31wal"]
+[ext_resource type="PackedScene" uid="uid://dchehysuvbio6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
 texture = ExtResource("2_81yfc")
@@ -607,6 +608,20 @@ position = Vector2(4197, 95)
 
 [node name="PiqueQuiTombe" parent="." instance=ExtResource("7_31wal")]
 position = Vector2(4866, -179)
+
+[node name="enemyBasic" type="Node2D" parent="."]
+
+[node name="BasicEnemy" parent="enemyBasic" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("8_qftbs")]
+position = Vector2(2835, 31)
+pos1 = NodePath("../Marker2D")
+pos2 = NodePath("../Marker2D2")
+baseLife = 5
+
+[node name="Marker2D" type="Marker2D" parent="enemyBasic"]
+position = Vector2(2377, 31)
+
+[node name="Marker2D2" type="Marker2D" parent="enemyBasic"]
+position = Vector2(2968, 31)
 
 [editable path="DeathZone/DeathZone"]
 [editable path="DeathZone/DeathZone2"]

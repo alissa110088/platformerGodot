@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://r6q5fxgfqpl6"]
+[gd_scene load_steps=9 format=3 uid="uid://dchehysuvbio6"]
 
-[ext_resource type="Script" uid="uid://dy18m4r1tqje7" path="res://script/BasicEnemy.gd" id="1_5nu48"]
+[ext_resource type="Script" path="res://script/BasicEnemy.gd" id="1_5nu48"]
 [ext_resource type="Texture2D" uid="uid://dqcbks6h7x6ii" path="res://asset/tile_0240.png" id="2_ksvhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
@@ -56,10 +56,13 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="BombEnemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference") groups=["Enemy"]]
+scale = Vector2(4, 4)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_5nu48")
+animationPlayerReference = NodePath("AnimationPlayer")
+particleReference = NodePath("GPUParticles2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

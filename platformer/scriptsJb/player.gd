@@ -81,6 +81,5 @@ func TakeDamage(value : int) -> void :
 	var tween = get_tree().create_tween()
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, 0.25)
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.25)
-	print(_actualLife) 
 	if _actualLife <= 0:
 		die()
