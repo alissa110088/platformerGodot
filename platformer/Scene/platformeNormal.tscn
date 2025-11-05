@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq3fawhwo14lw"]
+[gd_scene load_steps=7 format=3 uid="uid://1g8800ajoqbb"]
 
-[ext_resource type="Script" uid="uid://dm5cj12jjj6ws" path="res://script/platforme_rebond.gd" id="1_nlcm8"]
-[ext_resource type="Texture2D" uid="uid://dh262trp8fhg" path="res://asset/tile_0048.png" id="2_dib6p"]
+[ext_resource type="Texture2D" uid="uid://db81ghltpum0k" path="res://asset/tile_0104.png" id="2_h3h0x"]
+[ext_resource type="Texture2D" uid="uid://cebfpqdhdq5c7" path="res://asset/tile_0105.png" id="3_x6hll"]
+[ext_resource type="Texture2D" uid="uid://buriwa33s4smh" path="res://asset/tile_0106.png" id="4_blor6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dib6p"]
 
@@ -11,9 +12,8 @@ size = Vector2(212, 41)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcm8"]
 size = Vector2(212, 42)
 
-[node name="platformeRebond" type="StaticBody2D"]
+[node name="platformeNormal" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_dib6p")
-script = ExtResource("1_nlcm8")
 
 [node name="visual" type="Node2D" parent="."]
 scale = Vector2(2.205, 2.555)
@@ -21,32 +21,32 @@ scale = Vector2(2.205, 2.555)
 [node name="Sprite2D" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(9, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("2_h3h0x")
 
 [node name="Sprite2D2" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(25, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("3_x6hll")
 
 [node name="Sprite2D3" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(41, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("3_x6hll")
 
 [node name="Sprite2D4" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(57, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("3_x6hll")
 
 [node name="Sprite2D5" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(73, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("3_x6hll")
 
 [node name="Sprite2D6" type="Sprite2D" parent="visual"]
 texture_filter = 1
 position = Vector2(89, 11)
-texture = ExtResource("2_dib6p")
+texture = ExtResource("4_blor6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108, 28.5)
