@@ -1,11 +1,18 @@
-class_name MoveingPlatform extends StaticBody2D
+class_name MovingPlatform
+extends StaticBody2D
 
+@export var _target1: Marker2D
+@export var _target2: Marker2D
+@export var _speed: float = 100.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var _current_target: Marker2D
 
+func _ready():
+	_current_target = _target1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta):
+	var _dir = (_current_target.global_position - global_position).normalized()
+	global_position += _dir * _speed * delta
+
+	if global_position.distance_to(_current_target.global_position) < 2.0:
+		_current_target = _target2 if _current_target == _target1 else _target1
