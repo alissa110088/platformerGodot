@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://e4my1ha11ay1"]
+
+[ext_resource type="Script" uid="uid://cgidlx8eljm35" path="res://script/BombEnemy.gd" id="1_5nu48"]
+[ext_resource type="Texture2D" uid="uid://dqcbks6h7x6ii" path="res://asset/tile_0240.png" id="2_ksvhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
+size = Vector2(10, 9)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nu48"]
+particle_flag_disable_z = true
+angular_velocity_min = 15.659984
+angular_velocity_max = 239.99998
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = 42.829975
+radial_velocity_max = 206.34998
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nu48"]
+size = Vector2(12, 11)
+
+[sub_resource type="Animation" id="Animation_5nu48"]
+resource_name = "Enemy explode"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_ksvhl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wegof"]
+_data = {
+&"Enemy explode": SubResource("Animation_5nu48"),
+&"RESET": SubResource("Animation_ksvhl")
+}
+
+[node name="BombEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference") groups=["Enemy"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_5nu48")
+animationPlayerReference = NodePath("AnimationPlayer")
+particleReference = NodePath("GPUParticles2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ksvhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_wegof")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 90
+lifetime = 0.6
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_5nu48")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5nu48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wegof")
+}
+
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
