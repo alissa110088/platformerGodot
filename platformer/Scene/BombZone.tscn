@@ -4,6 +4,7 @@
 radius = 56.008926
 
 [node name="BombZone" type="Area2D"]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4aspw")
