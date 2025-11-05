@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4y6xd5jybwkf"]
+
+[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_i3got"]
+[ext_resource type="Script" uid="uid://q46bvanqd56a" path="res://pause_menu.gd" id="1_msjnk"]
+[ext_resource type="PackedScene" uid="uid://mt0mjd5fp80r" path="res://Scene/resume_button.tscn" id="3_msjnk"]
+[ext_resource type="PackedScene" uid="uid://bnjcoj46kbcjw" path="res://Scene/options_button.tscn" id="4_48vd4"]
+[ext_resource type="PackedScene" uid="uid://bh0acq0rnege4" path="res://Scene/quit_button.tscn" id="5_nkw6i"]
+
+[sub_resource type="Animation" id="Animation_8dofg"]
+resource_name = "Open_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -17.54), Vector2(0, 800)]
+}
+
+[sub_resource type="Animation" id="Animation_msjnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48vd4"]
+_data = {
+&"Open_close": SubResource("Animation_8dofg"),
+&"RESET": SubResource("Animation_msjnk")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.00024414063
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_msjnk")
+
+[node name="GamePaused" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.5
+offset_right = 192.5
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_i3got")
+theme_override_font_sizes/font_size = 72
+text = "Pause"
+
+[node name="ResumeButton" parent="." instance=ExtResource("3_msjnk")]
+layout_mode = 1
+offset_top = -161.0
+offset_bottom = -105.0
+
+[node name="OptionsButton" parent="." instance=ExtResource("4_48vd4")]
+layout_mode = 1
+offset_top = -1.0
+offset_bottom = 55.0
+
+[node name="QuitButton" parent="." instance=ExtResource("5_nkw6i")]
+layout_mode = 1
+offset_top = 159.0
+offset_bottom = 215.0
+
+[node name="AnimationPauseMenu" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_48vd4")
+}
+
+[connection signal="mouse_entered" from="ResumeButton" to="." method="_on_resume_button_mouse_entered"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

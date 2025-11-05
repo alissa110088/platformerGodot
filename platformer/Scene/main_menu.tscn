@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://1j48ocyho3jh"]
+[gd_scene load_steps=13 format=3 uid="uid://dpy3ccy6uodhk"]
 
-[ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
+[ext_resource type="PackedScene" path="res://Scene/button.tscn" id="1_ftydy"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
-[ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://Scene/button_play.gd" id="2_hii65"]
-[ext_resource type="Script" path="res://Scene/button_options.gd" id="3_kqsxi"]
-[ext_resource type="Script" path="res://Scene/button_credit.gd" id="4_hptlk"]
-[ext_resource type="Script" path="res://Scene/button_quit.gd" id="5_oqads"]
+[ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://script/button_play.gd" id="2_hii65"]
+[ext_resource type="Script" uid="uid://c46tdcjshy5n5" path="res://script/button_options.gd" id="3_kqsxi"]
+[ext_resource type="Script" uid="uid://cb6osx4kb1dl7" path="res://script/button_credit.gd" id="4_hptlk"]
+[ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
 
 [sub_resource type="Animation" id="Animation_kqsxi"]
 length = 0.001
@@ -251,9 +251,9 @@ scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("2_hii65")
 
 [node name="Options" parent="Buttons" instance=ExtResource("1_ftydy")]
-offset_left = 438.00003
+offset_left = 474.305
 offset_top = 276.0
-offset_right = 2014.0005
+offset_right = 2050.3064
 offset_bottom = 401.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("3_kqsxi")
