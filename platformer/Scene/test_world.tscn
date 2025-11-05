@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://crsyixjat8uxw"]
+
+[ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="1_t4wiw"]
+[ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="2_lusoc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlatformeMovante" parent="." instance=ExtResource("1_t4wiw")]
+position = Vector2(330, 245)
+script = null
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(204, 155)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(707, 161)
+
+[node name="Player" parent="." instance=ExtResource("2_lusoc")]
+position = Vector2(343, 28)
