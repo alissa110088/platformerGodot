@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="platformer"
-run/main_scene="uid://e4my1ha11ay1"
+run/main_scene="uid://cnif8tq0fp78e"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Enemy=""
+
+[layer_names]
+
+2d_physics/layer_3="Wall"
+2d_physics/layer_4="Enemy"
 
 [rendering]
 
