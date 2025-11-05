@@ -7,8 +7,9 @@ var _is_dead: bool = false
 @export var _game_over: PackedScene
 @export var _canvas_layer: CanvasLayer
 @export var _animated_sprite: AnimatedSprite2D
-@export var baseLife : int = 100
+@export var baseLife : int = 3
 @export var _animated_sprite_bow: AnimatedSprite2D
+@export var _heart: Control
 var can_shoot: bool = true
 var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
@@ -79,7 +80,12 @@ func _on_timer_timeout() -> void:
 	can_shoot = true
 
 func TakeDamage(value : int) -> void :
-	_actualLife -= value
+	if _actualLife >= 1 :
+		print(_actualLife -1)
+		var _temp: Control = _heart.get_child(_actualLife -1)
+		_temp.visible = false
+	_actualLife -= 1
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, 0.25)
 	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.25)

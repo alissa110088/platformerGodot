@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5velm0vs8kmg"]
+[gd_scene load_steps=24 format=3 uid="uid://5velm0vs8kmg"]
 
 [ext_resource type="Script" uid="uid://dxirvx2qrq8vy" path="res://scriptsJb/player.gd" id="1_y8w33"]
 [ext_resource type="PackedScene" uid="uid://exqaeqqybwr3" path="res://Scene/Game Over.tscn" id="2_58ae2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://3pjw28s1w4g" path="res://asset/tile_0263.png" id="7_c68nv"]
 [ext_resource type="Shader" uid="uid://c8frlh5lyn8h6" path="res://Scene/player.tres" id="9_c68nv"]
 [ext_resource type="Texture2D" uid="uid://8qi2iuc10kmv" path="res://Bow and Arrows.png" id="9_ij4jb"]
+[ext_resource type="Texture2D" uid="uid://tr8wt4p8s07y" path="res://asset/Heart_pixelart_(transparent_background).svg.png" id="11_c31lq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c31lq"]
 animations = [{
@@ -140,12 +141,12 @@ _data = {
 &"idle": SubResource("Animation_c68nv")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animated_sprite", "_animated_sprite_bow") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animated_sprite", "_animated_sprite_bow", "_heart") groups=["Player"]]
 script = ExtResource("1_y8w33")
 _game_over = ExtResource("2_58ae2")
 _animated_sprite = NodePath("AnimatedSprite2D")
-baseLife = 50
 _animated_sprite_bow = NodePath("AnimatedSprite2D2")
+_heart = NodePath("CanvasLayer/Control")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -182,5 +183,42 @@ animation = &"idle"
 libraries = {
 &"": SubResource("AnimationLibrary_2dof7")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 38.99994
+offset_top = 22.999985
+offset_right = 158.99994
+offset_bottom = 142.99998
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_c31lq")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 23.0
+offset_right = 250.0
+offset_bottom = 143.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_c31lq")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 23.0
+offset_right = 340.0
+offset_bottom = 143.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_c31lq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
