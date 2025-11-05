@@ -7,13 +7,14 @@ var _is_dead: bool = false
 @export var _game_over: PackedScene
 @export var _canvas_layer: CanvasLayer
 @export var _animated_sprite: AnimatedSprite2D
+@export var baseLife : int = 100
 var can_shoot: bool = true
-
+var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_actualLife = baseLife
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,6 +61,7 @@ func shoot() -> void:
 	projectile.global_position = $ArrowAnchor/Origin.global_position
 	get_parent().add_child(projectile)
 	projectile.global_rotation = $ArrowAnchor/Origin.global_rotation
-	
-	
-	
+
+func TakeDamage(value : int) -> void :
+	_actualLife -= value
+	print(_actualLife) 
