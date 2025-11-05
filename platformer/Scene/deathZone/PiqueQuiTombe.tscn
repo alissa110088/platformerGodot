@@ -10,6 +10,8 @@ size = Vector2(16, 7.75)
 size = Vector2(4.375, 32.875)
 
 [node name="PiqueQuiTombe" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_orlhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
