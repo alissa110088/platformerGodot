@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhhr5bdggtecg"]
 
-[ext_resource type="Script" uid="uid://cgidlx8eljm35" path="res://script/BombEnemy.gd" id="1_b2af3"]
+[ext_resource type="Script" uid="uid://c2wsdy10eg54f" path="res://script/FlyingEnemy.gd" id="1_b2af3"]
 [ext_resource type="Texture2D" uid="uid://b8fnii4ygjg5i" path="res://asset/tile_0320.png" id="2_b2af3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
@@ -16,8 +16,8 @@ radial_velocity_min = 42.829975
 radial_velocity_max = 206.34998
 gravity = Vector3(0, 98, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nu48"]
-size = Vector2(12, 11)
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3al1"]
+radius = 109.056175
 
 [sub_resource type="Animation" id="Animation_5nu48"]
 resource_name = "Enemy explode"
@@ -56,10 +56,12 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("animationPlayerReference", "particleReference") groups=["Enemy"]]
+[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cooldown", "anchor", "animationPlayerReference", "particleReference") groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_b2af3")
+cooldown = NodePath("Timer")
+anchor = NodePath("Anchor")
 animationPlayerReference = NodePath("AnimationPlayer")
 particleReference = NodePath("GPUParticles2D")
 
@@ -82,12 +84,22 @@ process_material = SubResource("ParticleProcessMaterial_5nu48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_5nu48")
+shape = SubResource("CircleShape2D_e3al1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_wegof")
 }
 
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Anchor"]
+position = Vector2(12, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+
 [connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
