@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7fpoud8mnwk6" path="res://asset/UI/title_panel_ui_v1.png" id="1_gwfd0"]
 [ext_resource type="Texture2D" uid="uid://ceqdjnuw5oecv" path="res://asset/UI/button_pressed.png" id="2_afoiq"]
-[ext_resource type="Script" uid="uid://duw8gmi17bej" path="res://Scene/button.gd" id="3_e0r3o"]
+[ext_resource type="Script" path="res://Scene/button.gd" id="3_e0r3o"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="3_iq150"]
 
 [node name="Button" type="TextureButton"]
@@ -17,6 +17,8 @@ offset_bottom = -262.99994
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6000009, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("1_gwfd0")
 texture_pressed = ExtResource("2_afoiq")
 script = ExtResource("3_e0r3o")

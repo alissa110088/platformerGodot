@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp0shc42cn84v"]
+[gd_scene load_steps=13 format=3 uid="uid://1j48ocyho3jh"]
 
 [ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
 [ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://Scene/button_play.gd" id="2_hii65"]
-[ext_resource type="Script" uid="uid://c46tdcjshy5n5" path="res://Scene/button_options.gd" id="3_kqsxi"]
-[ext_resource type="Script" uid="uid://cb6osx4kb1dl7" path="res://Scene/button_credit.gd" id="4_hptlk"]
-[ext_resource type="Script" uid="uid://crgt65vklubck" path="res://Scene/button_quit.gd" id="5_oqads"]
+[ext_resource type="Script" path="res://Scene/button_options.gd" id="3_kqsxi"]
+[ext_resource type="Script" path="res://Scene/button_credit.gd" id="4_hptlk"]
+[ext_resource type="Script" path="res://Scene/button_quit.gd" id="5_oqads"]
 
 [sub_resource type="Animation" id="Animation_kqsxi"]
 length = 0.001
@@ -106,34 +106,6 @@ tracks/7/keys = {
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_pvidh"]
-resource_name = "animation_options"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Options:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.84, 1),
-"update": 0,
-"values": [Vector2(438.00003, 276), Vector2(474.305, 276)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Options:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 0.84),
-"update": 0,
-"values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_hptlk"]
 resource_name = "animation_credits"
 length = 0.5
@@ -162,30 +134,30 @@ tracks/1/keys = {
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_oqads"]
-resource_name = "animation_quit"
+[sub_resource type="Animation" id="Animation_pvidh"]
+resource_name = "animation_options"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Quit:position")
+tracks/0/path = NodePath("Buttons/Options:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.84, 1),
 "update": 0,
-"values": [Vector2(438.00003, 514), Vector2(474.305, 514)]
+"values": [Vector2(438.00003, 276), Vector2(474.305, 276)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Quit:self_modulate")
+tracks/1/path = NodePath("Buttons/Options:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 0.84),
 "update": 0,
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
 }
@@ -216,6 +188,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 0.84),
 "update": 0,
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.83889705, 0.83889705, 0.838897, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oqads"]
+resource_name = "animation_quit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/Quit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.84, 1),
+"update": 0,
+"values": [Vector2(438.00003, 514), Vector2(474.305, 514)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/Quit:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hii65"]
@@ -270,6 +270,7 @@ offset_right = 2014.0002
 offset_bottom = 520.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("4_hptlk")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" parent="Buttons/Credits" index="0"]
 offset_left = -228.62573
