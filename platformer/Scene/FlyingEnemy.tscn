@@ -31,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
-size = Vector2(10, 9)
+size = Vector2(10, 12)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nu48"]
 particle_flag_disable_z = true
@@ -84,6 +84,7 @@ _data = {
 }
 
 [node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cooldown", "anchor", "animationPlayerReference", "particleReference", "animatedSpriteReference") groups=["Enemy"]]
+scale = Vector2(4, 4)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_b2af3")
@@ -100,7 +101,7 @@ animation = &"Idle"
 frame_progress = 0.20014802
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wegof")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://caa8e3eoicl7q"]
+[gd_scene load_steps=4 format=3 uid="uid://d1d6tkqewl5wd"]
 
-[ext_resource type="Script" uid="uid://dx604t8erx56g" path="res://script/ladder.gd" id="1_j7g3j"]
+[ext_resource type="Script" path="res://script/ladder.gd" id="1_j7g3j"]
 [ext_resource type="Texture2D" uid="uid://ddc7whejgqp83" path="res://asset/tile_0080.png" id="2_hifyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hacj"]
 size = Vector2(14, 18)
 
 [node name="ladder" type="Area2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_j7g3j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(42, 38)
 shape = SubResource("RectangleShape2D_3hacj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(42, 39)
+position = Vector2(0, 1)
 texture = ExtResource("2_hifyj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
