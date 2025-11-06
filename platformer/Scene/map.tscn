@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=18 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://r6q5fxgfqpl6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="9_5vj6g"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="9_wo3cx"]
-[ext_resource type="PackedScene" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
+[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
 [ext_resource type="PackedScene" uid="uid://d1d6tkqewl5wd" path="res://Scene/ladder.tscn" id="10_ysgi6"]
 [ext_resource type="PackedScene" uid="uid://bhhr5bdggtecg" path="res://Scene/FlyingEnemy.tscn" id="12_e7yu7"]
+[ext_resource type="PackedScene" uid="uid://7bhsjc8h38tj" path="res://Scene/DoorEndLevel.tscn" id="14_htkc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
 texture = ExtResource("2_81yfc")
@@ -740,6 +741,9 @@ position = Vector2(11051, -474)
 
 [node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(2484, -62)
+
+[node name="DoorEndLevel" parent="." instance=ExtResource("14_htkc4")]
+position = Vector2(13239, -307)
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]
