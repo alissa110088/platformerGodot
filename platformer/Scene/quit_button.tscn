@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://bh0acq0rnege4"]
+
+[ext_resource type="Texture2D" uid="uid://c7fpoud8mnwk6" path="res://asset/UI/title_panel_ui_v1.png" id="1_qakwf"]
+[ext_resource type="Texture2D" uid="uid://ceqdjnuw5oecv" path="res://asset/UI/button_pressed.png" id="2_oxym2"]
+[ext_resource type="Script" uid="uid://b58oyspgantvq" path="res://script/quit_button.gd" id="3_qakwf"]
+[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="4_slf6q"]
+
+[sub_resource type="Animation" id="Animation_t00dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gqdrk"]
+resource_name = "Quit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(0.84, 1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.84, 1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhdpl"]
+_data = {
+&"Quit": SubResource("Animation_gqdrk"),
+&"RESET": SubResource("Animation_t00dy")
+}
+
+[node name="QuitButton" type="TextureButton"]
+self_modulate = Color(0.34117648, 0.34117648, 0.34117648, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -28.0
+offset_right = 342.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_qakwf")
+texture_pressed = ExtResource("2_oxym2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_qakwf")
+
+[node name="Quit" type="Label" parent="."]
+self_modulate = Color(0.34117648, 0.34117648, 0.34117648, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_slf6q")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="AnimationQuit" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yhdpl")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
