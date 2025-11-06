@@ -11,6 +11,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	
 func _explosion_damage_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player and body.is_invincible:
+		return
 	if body.is_in_group("Enemy") or body.is_in_group("Player"):
 		body.TakeDamage(damages)
 		body.TakeDamage(damages)

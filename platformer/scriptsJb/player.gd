@@ -11,6 +11,7 @@ var _is_dead: bool = false
 @export var _animated_sprite_bow: AnimatedSprite2D
 @export var _heart: Control
 @export var _pause: PackedScene
+@export var _timer_invicible: Timer
 var is_invincible : bool = false
 var can_climb:bool = false
 var can_shoot: bool = true
@@ -108,5 +109,10 @@ func heal(value : int) -> void :
 func invincible() :
 	is_invincible = true
 	$PlayerAnimator.play("invincible")
-	await $PlayerAnimator.animation_finished
+	_timer_invicible.start()
+
+
+func _on_invicible_timeout() -> void:
 	is_invincible = false
+	$PlayerAnimator.stop()
+	_animated_sprite.play("idle")

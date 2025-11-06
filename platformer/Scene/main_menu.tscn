@@ -102,13 +102,14 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 39.00003
-offset_top = 185.0
-offset_right = 1615.0
-offset_bottom = 310.0
+offset_left = -492.0
+offset_top = 147.00002
+offset_right = 1084.0
+offset_bottom = 272.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.32000035, 0.5333331)
+pivot_offset = Vector2(775, 65)
 script = ExtResource("2_hii65")
 
 [node name="Quit" parent="Buttons" instance=ExtResource("1_ftydy")]
@@ -116,13 +117,14 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 40.000004
-offset_top = 279.00003
-offset_right = 1616.0
-offset_bottom = 404.00046
+offset_left = -490.0
+offset_top = 254.0
+offset_right = 1086.0
+offset_bottom = 379.00043
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.32000035, 0.5333331)
+pivot_offset = Vector2(775, 65)
 script = ExtResource("5_oqads")
 
 [node name="Label" parent="Buttons/Quit" index="0"]
