@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bysmpmebpn5sv"]
+
+[ext_resource type="PackedScene" uid="uid://c7cpsabecass6" path="res://Scene/map.tscn" id="1_1sj7i"]
+[ext_resource type="Texture2D" uid="uid://xh883kljioi0" path="res://asset/tile_0190.png" id="2_fks20"]
+[ext_resource type="Texture2D" uid="uid://ddc7whejgqp83" path="res://asset/tile_0080.png" id="3_gd4s0"]
+[ext_resource type="Texture2D" uid="uid://cx1fs4p5e2yjm" path="res://asset/tile_0027.png" id="4_v8dqf"]
+[ext_resource type="Texture2D" uid="uid://bkyh2y38tcmb7" path="res://asset/tile_0196.png" id="5_sx8s7"]
+[ext_resource type="Texture2D" uid="uid://dqhm83h2q56tv" path="res://asset/tile_0197.png" id="6_ut2em"]
+[ext_resource type="Texture2D" uid="uid://b3bykkuobck66" path="res://asset/tile_0236.png" id="7_47wsx"]
+[ext_resource type="Texture2D" uid="uid://8h602bgcdkhk" path="res://asset/tile_0237.png" id="8_f5nwa"]
+
+[node name="MenuBackground" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_1sj7i")]
+
+[node name="Flag" type="Sprite2D" parent="."]
+position = Vector2(522.00006, 183.99998)
+scale = Vector2(2.5625, 2.8125)
+texture = ExtResource("2_fks20")
+
+[node name="LadderGroup" type="Node2D" parent="."]
+
+[node name="ladder" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 233.74998)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="ladder2" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 290)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="ladder3" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 346)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="ladder4" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 402)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="ladder5" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 458.00003)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="ladder6" type="Sprite2D" parent="LadderGroup"]
+position = Vector2(921.75, 514)
+scale = Vector2(3.5312479, 3.5312479)
+texture = ExtResource("3_gd4s0")
+
+[node name="Case" type="Sprite2D" parent="."]
+position = Vector2(767, 117)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("4_v8dqf")
+
+[node name="Cave" type="Node" parent="."]
+
+[node name="RoofCave" type="Sprite2D" parent="Cave"]
+position = Vector2(1039.0001, 552.00006)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("5_sx8s7")
+
+[node name="RoofCave2" type="Sprite2D" parent="Cave"]
+position = Vector2(981, 552.00006)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("5_sx8s7")
+
+[node name="RoofCave3" type="Sprite2D" parent="Cave"]
+position = Vector2(981, 510)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("7_47wsx")
+
+[node name="RoofCave4" type="Sprite2D" parent="Cave"]
+position = Vector2(1039.0001, 510)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("7_47wsx")
+
+[node name="ConeCave" type="Sprite2D" parent="Cave"]
+position = Vector2(1113, 552)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("6_ut2em")
+
+[node name="ConeCave2" type="Sprite2D" parent="Cave"]
+position = Vector2(1113, 510)
+scale = Vector2(4.75, 2.75)
+texture = ExtResource("8_f5nwa")
