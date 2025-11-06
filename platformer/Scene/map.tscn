@@ -742,6 +742,8 @@ position = Vector2(11051, -474)
 [node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(2484, -62)
 
+[node name="DoorEndLevel" parent="." instance=ExtResource("14_htkc4")]
+position = Vector2(13239, -307)
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -1
 scroll_scale = Vector2(0.95, 0.95)
