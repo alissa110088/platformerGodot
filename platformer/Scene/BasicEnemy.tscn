@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dchehysuvbio6"]
 
-[ext_resource type="Script" path="res://script/BasicEnemy.gd" id="1_5nu48"]
+[ext_resource type="Script" uid="uid://dy18m4r1tqje7" path="res://script/BasicEnemy.gd" id="1_5nu48"]
 [ext_resource type="Texture2D" uid="uid://dqcbks6h7x6ii" path="res://asset/tile_0240.png" id="2_ksvhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wegof"]
