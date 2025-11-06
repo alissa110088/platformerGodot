@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://crsyixjat8uxw"]
+[gd_scene load_steps=6 format=3 uid="uid://crsyixjat8uxw"]
 
 [ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/plateform/platformeMovante.tscn" id="1_t4wiw"]
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="2_lusoc"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="3_1t27l"]
 [ext_resource type="PackedScene" uid="uid://caa8e3eoicl7q" path="res://Scene/ladder.tscn" id="4_rusrt"]
+[ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="5_uvykp"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -43,3 +44,6 @@ collision_layer = 9
 collision_mask = 5
 pos1 = NodePath("../Marker2D")
 pos2 = NodePath("../Marker2D2")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_uvykp")]
+position = Vector2(902, 190)
