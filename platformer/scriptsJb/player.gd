@@ -10,6 +10,7 @@ var _is_dead: bool = false
 @export var baseLife : int = 3
 @export var _animated_sprite_bow: AnimatedSprite2D
 @export var _heart: Control
+var can_climb:bool = false
 var can_shoot: bool = true
 var _actualLife : int
 const projectile_scene: PackedScene = preload("res://Scene/arrow.tscn")
@@ -52,9 +53,9 @@ func _physics_process(delta: float) -> void:
 		shoot()
 		can_shoot = false
 		
-	if Input.is_action_pressed("shoot") and can_shoot == true:
-		shoot()
-		can_shoot = false
+	if can_climb == true:
+		velocity.y = Input.get_axis("climb_up","climb_down") * _speed
+		
 		
 		
 		
