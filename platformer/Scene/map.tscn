@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=15 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6urhxwr48gvj" path="res://Scene/deathZone/PiqueQuiTombe.tscn" id="7_31wal"]
 [ext_resource type="PackedScene" uid="uid://dchehysuvbio6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="9_5vj6g"]
+[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
+[ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="11_e7yu7"]
+[ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="12_1i5py"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
 texture = ExtResource("2_81yfc")
@@ -548,6 +551,10 @@ position = Vector2(2968, 31)
 
 [node name="CheckPoint" parent="." instance=ExtResource("9_5vj6g")]
 position = Vector2(1561, 286)
+
+[node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
+position = Vector2(693, 183)
+power_up = Array[PackedScene]([ExtResource("11_e7yu7"), ExtResource("12_1i5py")])
 
 [editable path="DeathZone/DeathZone"]
 [editable path="DeathZone/DeathZone2"]

@@ -26,16 +26,9 @@ func _ready() -> void:
 	_animated_sprite_bow.play("idle")
 	$PlayerAnimator.play("idle")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-	
 func _physics_process(delta: float) -> void:
 	if _is_dead:
-		return
-		
+		return	
 	
 	velocity.x = Input.get_axis("move_left","move_right") * _speed
 	
@@ -85,15 +78,17 @@ func _on_timer_timeout() -> void:
 	can_shoot = true
 
 func TakeDamage(value : int) -> void :
-	if _actualLife >= 1 and is_invincible == false:
+	if is_invincible:
+		return
+	if _actualLife >= 1:
 		print(_actualLife -1)
 		var _temp: Control = _heart.get_child(_actualLife -1)
 		_temp.visible = false
 	_actualLife -= 1
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, 0.25)
-	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.25)
+	tween.tween_property(_animated_sprite, "modulate", Color.RED, 0.25)
+	tween.tween_property(_animated_sprite, "modulate", Color.WHITE, 0.25)
 	if _actualLife <= 0:
 		die()
 		
