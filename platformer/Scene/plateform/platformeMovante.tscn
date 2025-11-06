@@ -8,11 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q05bv"]
 size = Vector2(212, 41)
 
-[node name="PlatformeMovante" type="StaticBody2D" node_paths=PackedStringArray("target1", "target2")]
+[node name="PlatformeMovante" type="AnimatableBody2D"]
 script = ExtResource("1_hu42t")
-target1 = NodePath("")
-target2 = NodePath("")
-speed = 200.0
 
 [node name="visual" type="Node2D" parent="."]
 scale = Vector2(2.205, 2.555)

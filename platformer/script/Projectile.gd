@@ -1,12 +1,13 @@
 extends PhysicsBody2D
 
-@export var speed: float = 800.0
+@export var speed: float = 300.0
 @export var damage: int = 25
 
 var _direction: Vector2
 
 func _physics_process(delta: float) -> void:
 	_direction = Vector2.RIGHT.rotated(global_rotation)
+	
 	var velocity: Vector2 = _direction * speed * delta
 	
 	var collision: KinematicCollision2D = move_and_collide(velocity)
@@ -15,8 +16,8 @@ func _physics_process(delta: float) -> void:
 		var collider: CollisionObject2D = collision.get_collider() 
 		if collider.is_in_group("Obstacle"):
 			bounce(collision)
-		elif collider.is_in_group("Enemy"):
-			collider.LooseLife(damage)
+		elif collider.is_in_group("Player"):
+			collider.TakeDamage(damage)
 			queue_free()
 
 

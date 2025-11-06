@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://0gdp22y3ked8"]
+[gd_scene load_steps=4 format=3 uid="uid://0gdp22y3ked8"]
 
+[ext_resource type="Script" uid="uid://b5l6seaat2ij7" path="res://script/Projectile.gd" id="1_1eg7f"]
 [ext_resource type="Texture2D" uid="uid://lr5n5gjakja2" path="res://asset/tile_0001.png" id="1_jl7jq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1eg7f"]
 radius = 3.1622777
 
 [node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_1eg7f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

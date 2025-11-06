@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://crsyixjat8uxw"]
 
-[ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/platformeMovante.tscn" id="1_t4wiw"]
+[ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/plateform/platformeMovante.tscn" id="1_t4wiw"]
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="2_lusoc"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="3_1t27l"]
 [ext_resource type="PackedScene" uid="uid://caa8e3eoicl7q" path="res://Scene/ladder.tscn" id="4_rusrt"]

@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://pt2l58twqnlu" path="res://arow.tres" id="2_xjl78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjl78"]
-size = Vector2(14, 2)
+size = Vector2(16.999992, 8.000002)
 
-[node name="Arrow" type="CharacterBody2D"]
+[node name="Arrow" type="CharacterBody2D" node_paths=PackedStringArray("timer", "sprite")]
 position = Vector2(94.000046, 48.000023)
 scale = Vector2(5, 5)
 collision_mask = 8
 script = ExtResource("1_hevao")
+timer = NodePath("Timer")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -18,4 +20,13 @@ texture = ExtResource("2_xjl78")
 region_rect = Rect2(0.010979891, 35.957638, 15.968599, 7.030201)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.4999924, -0.20000458)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_xjl78")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
