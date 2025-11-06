@@ -161,7 +161,6 @@ shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="ArrowAnchor" type="Node2D" parent="."]
 position = Vector2(42.000004, 18)
-rotation = -0.53232545
 
 [node name="Origin" type="Marker2D" parent="ArrowAnchor"]
 position = Vector2(27, 1)

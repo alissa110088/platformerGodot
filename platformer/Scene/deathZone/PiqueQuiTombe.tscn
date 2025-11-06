@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6urhxwr48gvj"]
+[gd_scene load_steps=6 format=3 uid="uid://b6urhxwr48gvj"]
 
 [ext_resource type="Texture2D" uid="uid://hfkbjgepx7ho" path="res://asset/tile_0122.png" id="1_mtvcy"]
 [ext_resource type="Script" uid="uid://bxl1foiyl4am" path="res://script/pique_qui_tombe.gd" id="1_orlhj"]
@@ -9,9 +9,11 @@ size = Vector2(16, 7.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtvcy"]
 size = Vector2(4.375, 32.875)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nf80"]
+size = Vector2(66, 46)
+
 [node name="PiqueQuiTombe" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_orlhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -33,4 +35,12 @@ position = Vector2(-0.25, 56)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_mtvcy")
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-1, -13)
+shape = SubResource("RectangleShape2D_7nf80")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
