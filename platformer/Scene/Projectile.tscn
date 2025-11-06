@@ -7,7 +7,9 @@
 radius = 3.1622777
 
 [node name="Projectile" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_1eg7f")
+speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

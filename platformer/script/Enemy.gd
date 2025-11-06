@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var baseLife : int = 30
 @export var animationPlayerReference : AnimationPlayer
 @export var particleReference : GPUParticles2D
+@export var animatedSpriteReference : AnimatedSprite2D 
 
 var _actualTargetPos : Vector2
 var _direction : Vector2
@@ -21,16 +22,20 @@ func _ready() -> void:
 	_actualTargetPos = pos1.global_position
 
 func _physics_process(delta: float) -> void:
+	if !_canMove:
+		return
+		
 	if global_position.distance_to(pos1.global_position) < 3 :
+		animatedSpriteReference.flip_h = false
 		_actualTargetPos = pos2.global_position
 	
 	elif global_position.distance_to(pos2.global_position) < 3 : 
 		_actualTargetPos = pos1.global_position
+		animatedSpriteReference.flip_h = true
 		
-	if _canMove:
-		var targetDirection = global_position.direction_to(_actualTargetPos)
-		_direction = lerp(_direction, targetDirection, delta * stiffness)
-		velocity = _direction * speed	
+	var targetDirection = global_position.direction_to(_actualTargetPos)
+	_direction = lerp(_direction, targetDirection, delta * stiffness)
+	velocity = _direction * speed	
 	
 	move_and_slide()
 

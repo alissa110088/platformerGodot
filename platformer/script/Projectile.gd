@@ -12,13 +12,11 @@ func _physics_process(delta: float) -> void:
 	
 	var collision: KinematicCollision2D = move_and_collide(velocity)
 	
-	if collision:
-		var collider: CollisionObject2D = collision.get_collider() 
-		if collider.is_in_group("Obstacle"):
-			bounce(collision)
-		elif collider.is_in_group("Player"):
+	if collision : 
+		if collision.get_collider().is_in_group("Player"):
+			var collider : CollisionObject2D = collision.get_collider()
 			collider.TakeDamage(damage)
-			queue_free()
+		queue_free()
 
 
 func bounce(collision: KinematicCollision2D):

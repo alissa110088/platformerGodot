@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=16 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -10,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://r6q5fxgfqpl6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="9_5vj6g"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="9_wo3cx"]
-[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
-[ext_resource type="PackedScene" uid="uid://caa8e3eoicl7q" path="res://Scene/ladder.tscn" id="10_ysgi6"]
+[ext_resource type="PackedScene" uid="uid://d1d6tkqewl5wd" path="res://Scene/ladder.tscn" id="10_ysgi6"]
 [ext_resource type="PackedScene" uid="uid://bhhr5bdggtecg" path="res://Scene/FlyingEnemy.tscn" id="12_e7yu7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
@@ -35,6 +34,8 @@ texture_region_size = Vector2i(17, 17)
 16:0/0 = 0
 17:0/0 = 0
 18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -54,6 +55,8 @@ texture_region_size = Vector2i(17, 17)
 16:1/0 = 0
 17:1/0 = 0
 18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -76,6 +79,8 @@ texture_region_size = Vector2i(17, 17)
 16:2/0 = 0
 17:2/0 = 0
 18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -95,6 +100,8 @@ texture_region_size = Vector2i(17, 17)
 16:3/0 = 0
 17:3/0 = 0
 18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -117,6 +124,8 @@ texture_region_size = Vector2i(17, 17)
 16:4/0 = 0
 17:4/0 = 0
 18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -147,6 +156,8 @@ texture_region_size = Vector2i(17, 17)
 17:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:5/0 = 0
 18:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:5/0 = 0
+20:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -171,6 +182,8 @@ texture_region_size = Vector2i(17, 17)
 16:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:6/0 = 0
 18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:6/0 = 0
+20:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -191,6 +204,8 @@ texture_region_size = Vector2i(17, 17)
 15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:7/0 = 0
 18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:7/0 = 0
+20:7/0 = 0
 0:8/0 = 0
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 1:8/0 = 0
@@ -221,6 +236,8 @@ texture_region_size = Vector2i(17, 17)
 17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:8/0 = 0
 18:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:8/0 = 0
+20:8/0 = 0
 0:9/0 = 0
 1:9/0 = 0
 2:9/0 = 0
@@ -248,6 +265,8 @@ texture_region_size = Vector2i(17, 17)
 17:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:9/0 = 0
 18:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:9/0 = 0
+20:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
 2:10/0 = 0
@@ -275,6 +294,8 @@ texture_region_size = Vector2i(17, 17)
 17:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:10/0 = 0
 18:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:10/0 = 0
+20:10/0 = 0
 0:11/0 = 0
 1:11/0 = 0
 3:11/0 = 0
@@ -301,6 +322,8 @@ texture_region_size = Vector2i(17, 17)
 17:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:11/0 = 0
 18:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:11/0 = 0
+20:11/0 = 0
 0:12/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -328,6 +351,8 @@ texture_region_size = Vector2i(17, 17)
 17:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:12/0 = 0
 18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:12/0 = 0
+20:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
 2:13/0 = 0
@@ -355,6 +380,8 @@ texture_region_size = Vector2i(17, 17)
 17:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:13/0 = 0
 18:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:13/0 = 0
+20:13/0 = 0
 0:14/0 = 0
 1:14/0 = 0
 2:14/0 = 0
@@ -382,6 +409,8 @@ texture_region_size = Vector2i(17, 17)
 17:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:14/0 = 0
 18:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:14/0 = 0
+20:14/0 = 0
 0:15/0 = 0
 1:15/0 = 0
 2:15/0 = 0
@@ -409,6 +438,8 @@ texture_region_size = Vector2i(17, 17)
 17:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:15/0 = 0
 18:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:15/0 = 0
+20:15/0 = 0
 0:16/0 = 0
 1:16/0 = 0
 2:16/0 = 0
@@ -436,6 +467,8 @@ texture_region_size = Vector2i(17, 17)
 17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 18:16/0 = 0
 18:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+19:16/0 = 0
+20:16/0 = 0
 0:17/0 = 0
 1:17/0 = 0
 2:17/0 = 0
@@ -455,6 +488,8 @@ texture_region_size = Vector2i(17, 17)
 16:17/0 = 0
 17:17/0 = 0
 18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
 0:18/0 = 0
 1:18/0 = 0
 2:18/0 = 0
@@ -474,6 +509,49 @@ texture_region_size = Vector2i(17, 17)
 16:18/0 = 0
 17:18/0 = 0
 18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+15:19/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+20:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+8:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+17:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
 12:7/0 = 0
 12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 11:7/0 = 0
@@ -549,9 +627,6 @@ position = Vector2(9541, -428)
 [node name="PlatformCassante2" parent="DeathZone" instance=ExtResource("2_ex5br")]
 position = Vector2(10524, -381)
 
-[node name="PlatformCassante3" parent="DeathZone" instance=ExtResource("2_ex5br")]
-position = Vector2(12642, -381)
-
 [node name="platformeRebond" parent="DeathZone" instance=ExtResource("3_5mejs")]
 position = Vector2(10006, -221)
 
@@ -583,7 +658,7 @@ position = Vector2(3305, 273)
 position = Vector2(4197, 95)
 
 [node name="PiqueQuiTombe" parent="." instance=ExtResource("7_31wal")]
-position = Vector2(4850, -158)
+position = Vector2(4850, -181)
 
 [node name="enemyBasic" type="Node2D" parent="."]
 
@@ -660,9 +735,6 @@ scale = Vector2(4, 4.5199995)
 [node name="CheckPoint2" parent="." instance=ExtResource("9_5vj6g")]
 position = Vector2(5164, -306)
 
-[node name="CheckPoint3" parent="." instance=ExtResource("9_5vj6g")]
-position = Vector2(9233, -387)
-
 [node name="PlateformeMouvante" type="Node2D" parent="."]
 position = Vector2(5873, -238)
 
@@ -716,30 +788,6 @@ pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy2"]
 position = Vector2(-3, 0)
-
-[node name="bomb" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="bomb"]
-position = Vector2(181, -132)
-scale = Vector2(4, 4)
-
-[node name="BombEnemy" parent="bomb" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_wo3cx")]
-position = Vector2(425, -132)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-
-[node name="Marker2D2" type="Marker2D" parent="bomb"]
-position = Vector2(705, -132)
-scale = Vector2(4, 4)
-
-[node name="RandomPowerUp2" parent="." instance=ExtResource("10_wo3cx")]
-position = Vector2(5631, -412)
-
-[node name="RandomPowerUp3" parent="." instance=ExtResource("10_wo3cx")]
-position = Vector2(11051, -474)
-
-[node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
-position = Vector2(2484, -62)
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]

@@ -80,10 +80,9 @@ func _on_timer_timeout() -> void:
 func TakeDamage(value : int) -> void :
 	if is_invincible:
 		return
-	if _actualLife >= 1:
+	if _actualLife >= 1 and _actualLife < 3:
 		print(_actualLife -1)
 		var _temp: Control = _heart.get_child(_actualLife -1)
-		_temp.visible = false
 	_actualLife -= 1
 	
 	var tween = get_tree().create_tween()
@@ -94,7 +93,6 @@ func TakeDamage(value : int) -> void :
 		
 func heal(value : int) -> void :
 	if _actualLife <= 2:
-		print(_actualLife +1)
 		var _temp: Control = _heart.get_child(_actualLife)
 		_temp.visible = true
 	_actualLife += 1
