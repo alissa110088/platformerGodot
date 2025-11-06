@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=18 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://r6q5fxgfqpl6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="9_5vj6g"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="9_wo3cx"]
-[ext_resource type="PackedScene" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
+[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
 [ext_resource type="PackedScene" uid="uid://d1d6tkqewl5wd" path="res://Scene/ladder.tscn" id="10_ysgi6"]
 [ext_resource type="PackedScene" uid="uid://bhhr5bdggtecg" path="res://Scene/FlyingEnemy.tscn" id="12_e7yu7"]
+[ext_resource type="Texture2D" uid="uid://cdekca5kbi0as" path="res://asset/[CITYPNG.COM]HD Cartoon Realistic White Cloud Transparent PNG - 2000x2000.png" id="14_htkc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
 texture = ExtResource("2_81yfc")
@@ -740,6 +741,40 @@ position = Vector2(11051, -474)
 
 [node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(2484, -62)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.95, 0.95)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(5825, -582)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_htkc4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(6285, -508.00006)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_htkc4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(7057, -629)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14_htkc4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(8742, -729)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_htkc4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(10817, -597.99994)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("14_htkc4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(11418, -577.00006)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14_htkc4")
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]

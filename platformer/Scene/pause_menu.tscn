@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw0ay7f8k655k"]
+[gd_scene load_steps=8 format=3 uid="uid://cw0ay7f8k655k"]
 
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_i3got"]
-[ext_resource type="Script" uid="uid://q46bvanqd56a" path="res://pause_menu.gd" id="1_msjnk"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_msjnk"]
 [ext_resource type="PackedScene" uid="uid://mt0mjd5fp80r" path="res://Scene/resume_button.tscn" id="3_msjnk"]
-[ext_resource type="PackedScene" uid="uid://bnjcoj46kbcjw" path="res://Scene/options_button.tscn" id="4_48vd4"]
 [ext_resource type="PackedScene" uid="uid://bh0acq0rnege4" path="res://Scene/quit_button.tscn" id="5_nkw6i"]
 
 [sub_resource type="Animation" id="Animation_8dofg"]
@@ -72,15 +71,10 @@ layout_mode = 1
 offset_top = -161.0
 offset_bottom = -105.0
 
-[node name="OptionsButton" parent="." instance=ExtResource("4_48vd4")]
-layout_mode = 1
-offset_top = -1.0
-offset_bottom = 55.0
-
 [node name="QuitButton" parent="." instance=ExtResource("5_nkw6i")]
 layout_mode = 1
-offset_top = 159.0
-offset_bottom = 215.0
+offset_top = -63.999878
+offset_bottom = -7.999878
 
 [node name="AnimationPauseMenu" type="AnimationPlayer" parent="."]
 libraries = {
