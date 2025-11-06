@@ -627,9 +627,6 @@ position = Vector2(9541, -428)
 [node name="PlatformCassante2" parent="DeathZone" instance=ExtResource("2_ex5br")]
 position = Vector2(10524, -381)
 
-[node name="PlatformCassante3" parent="DeathZone" instance=ExtResource("2_ex5br")]
-position = Vector2(12642, -381)
-
 [node name="platformeRebond" parent="DeathZone" instance=ExtResource("3_5mejs")]
 position = Vector2(10006, -221)
 
@@ -661,7 +658,7 @@ position = Vector2(3305, 273)
 position = Vector2(4197, 95)
 
 [node name="PiqueQuiTombe" parent="." instance=ExtResource("7_31wal")]
-position = Vector2(4850, -158)
+position = Vector2(4850, -181)
 
 [node name="enemyBasic" type="Node2D" parent="."]
 
@@ -737,9 +734,6 @@ scale = Vector2(4, 4.5199995)
 
 [node name="CheckPoint2" parent="." instance=ExtResource("9_5vj6g")]
 position = Vector2(5164, -306)
-
-[node name="CheckPoint3" parent="." instance=ExtResource("9_5vj6g")]
-position = Vector2(9233, -387)
 
 [node name="PlateformeMouvante" type="Node2D" parent="."]
 position = Vector2(5873, -238)
