@@ -48,14 +48,17 @@ func CheckDeath() -> void:
 	if _actualLife <= 0:
 		_canMove = false
 		animationPlayerReference.play("Enemy explode")
-		animationPlayerReference.animation_finished.connect(_on_animation_death_finished)
-		
+		var anim_name = await animationPlayerReference.animation_finished
+		_on_animation_death_finished(anim_name)
+
+
 func _on_animation_death_finished(anim_name: StringName):
 	get_node("Sprite2D").queue_free()
 	get_node("Area2D").queue_free()
 	get_node("CollisionShape2D").queue_free()
 	particleReference.emitting = true 
-	particleReference.finished.connect(_on_particles_death_finished)
+	await particleReference.finished
+	_on_particles_death_finished()
 	
 func _on_particles_death_finished():
 	queue_free()

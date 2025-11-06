@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7bhsjc8h38tj"]
+[gd_scene load_steps=5 format=3 uid="uid://d4nptgnyoeunu"]
 
 [ext_resource type="Script" uid="uid://j5ynk42jh6gn" path="res://script/EndLevelDoor.gd" id="1_rwiou"]
 [ext_resource type="Texture2D" uid="uid://bmjc43i1bmta0" path="res://asset/tile_0056.png" id="2_rdvu7"]
