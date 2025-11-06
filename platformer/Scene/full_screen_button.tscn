@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpcnfdoy3he8w"]
+
+[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_gd7me"]
+[ext_resource type="Script" uid="uid://cwogf5r334pom" path="res://script/full_screen_button.gd" id="2_kumw8"]
+
+[node name="FullScreenButton" type="CheckButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -15.5
+offset_right = 63.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gd7me")
+text = "Fullscreen"
+script = ExtResource("2_kumw8")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

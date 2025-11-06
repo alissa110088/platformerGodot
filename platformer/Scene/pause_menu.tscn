@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4y6xd5jybwkf"]
+[gd_scene load_steps=10 format=3 uid="uid://b4y6xd5jybwkf"]
 
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_i3got"]
-[ext_resource type="Script" uid="uid://q46bvanqd56a" path="res://pause_menu.gd" id="1_msjnk"]
+[ext_resource type="Script" uid="uid://q46bvanqd56a" path="res://script/pause_menu.gd" id="1_msjnk"]
 [ext_resource type="PackedScene" uid="uid://mt0mjd5fp80r" path="res://Scene/resume_button.tscn" id="3_msjnk"]
 [ext_resource type="PackedScene" uid="uid://bnjcoj46kbcjw" path="res://Scene/options_button.tscn" id="4_48vd4"]
 [ext_resource type="PackedScene" uid="uid://bh0acq0rnege4" path="res://Scene/quit_button.tscn" id="5_nkw6i"]
+[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/options_menu.tscn" id="6_48vd4"]
 
 [sub_resource type="Animation" id="Animation_8dofg"]
 resource_name = "Open_close"
@@ -87,6 +88,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_48vd4")
 }
 
+[node name="SettinsgsMenu" parent="." instance=ExtResource("6_48vd4")]
+visible = false
+layout_mode = 1
+
 [connection signal="mouse_entered" from="ResumeButton" to="." method="_on_resume_button_mouse_entered"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="close_requested" from="SettinsgsMenu" to="." method="_on_settinsgs_menu_close_requested"]

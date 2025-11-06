@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4w6qaqwmhh6"]
+
+[ext_resource type="Script" uid="uid://cwoj02p7cew1e" path="res://script/brightness_slider.gd" id="1_87kyj"]
+
+[node name="BrightnessSlider" type="HSlider"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 303.0
+offset_bottom = -303.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.5
+max_value = 4.0
+step = 0.01
+value = 1.5
+script = ExtResource("1_87kyj")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

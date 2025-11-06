@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpy3ccy6uodhk"]
+[gd_scene load_steps=15 format=3 uid="uid://dpy3ccy6uodhk"]
 
-[ext_resource type="PackedScene" path="res://Scene/button.tscn" id="1_ftydy"]
+[ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
+[ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://Scene/main_menu.gd" id="1_s2f1d"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
 [ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://script/button_play.gd" id="2_hii65"]
 [ext_resource type="Script" uid="uid://c46tdcjshy5n5" path="res://script/button_options.gd" id="3_kqsxi"]
 [ext_resource type="Script" uid="uid://cb6osx4kb1dl7" path="res://script/button_credit.gd" id="4_hptlk"]
 [ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
+[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/options_menu.tscn" id="7_oqads"]
 
 [sub_resource type="Animation" id="Animation_kqsxi"]
 length = 0.001
@@ -238,6 +240,7 @@ offset_right = -1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s2f1d")
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(-410, 0)
@@ -251,9 +254,9 @@ scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("2_hii65")
 
 [node name="Options" parent="Buttons" instance=ExtResource("1_ftydy")]
-offset_left = 474.305
+offset_left = 438.00003
 offset_top = 276.0
-offset_right = 2050.3064
+offset_right = 2014.0015
 offset_bottom = 401.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("3_kqsxi")
@@ -261,7 +264,7 @@ script = ExtResource("3_kqsxi")
 [node name="Label" parent="Buttons/Options" index="0"]
 offset_left = -234.87573
 offset_right = 298.4568
-text = "Options"
+text = "Settings"
 
 [node name="Credits" parent="Buttons" instance=ExtResource("1_ftydy")]
 offset_left = 438.00003
@@ -303,6 +306,14 @@ offset_bottom = 340.0
 theme_override_fonts/font = ExtResource("2_87ipw")
 theme_override_font_sizes/font_size = 48
 text = "Plateformer Godot"
+
+[node name="SettinsgsMenu" parent="." instance=ExtResource("7_oqads")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="close_requested" from="SettinsgsMenu" to="." method="_on_settinsgs_menu_close_requested"]
 
 [editable path="Buttons/Options"]
 [editable path="Buttons/Credits"]
