@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cow8qwlc6rmov"]
+[gd_scene load_steps=2 format=3 uid="uid://cow8qwlc6rmov"]
+
+[ext_resource type="Script" uid="uid://de1a51ov2uw5p" path="res://script/volume_slider.gd" id="1_gfriu"]
 
 [node name="VolumeSlider" type="HSlider"]
 anchors_preset = 15
@@ -10,3 +12,4 @@ grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
 step = 0.001
+script = ExtResource("1_gfriu")

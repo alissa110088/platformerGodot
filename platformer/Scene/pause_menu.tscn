@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://mt0mjd5fp80r" path="res://Scene/resume_button.tscn" id="3_msjnk"]
 [ext_resource type="PackedScene" uid="uid://bnjcoj46kbcjw" path="res://Scene/options_button.tscn" id="4_48vd4"]
 [ext_resource type="PackedScene" uid="uid://bh0acq0rnege4" path="res://Scene/quit_button.tscn" id="5_nkw6i"]
-[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/options_menu.tscn" id="6_48vd4"]
+[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/settings_menu.tscn" id="6_48vd4"]
 
 [sub_resource type="Animation" id="Animation_8dofg"]
 resource_name = "Open_close"

@@ -1,20 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpy3ccy6uodhk"]
+[gd_scene load_steps=16 format=3 uid="uid://dpy3ccy6uodhk"]
 
 [ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
-[ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://Scene/main_menu.gd" id="1_s2f1d"]
+[ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://script/main_menu.gd" id="1_s2f1d"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
 [ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://script/button_play.gd" id="2_hii65"]
 [ext_resource type="Script" uid="uid://c46tdcjshy5n5" path="res://script/button_options.gd" id="3_kqsxi"]
 [ext_resource type="Script" uid="uid://cb6osx4kb1dl7" path="res://script/button_credit.gd" id="4_hptlk"]
 [ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
-[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/options_menu.tscn" id="7_oqads"]
+[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/settings_menu.tscn" id="7_oqads"]
+[ext_resource type="PackedScene" uid="uid://ojhoy8mt3ytq" path="res://Scene/credits_menu.tscn" id="8_ejkra"]
 
 [sub_resource type="Animation" id="Animation_kqsxi"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Play:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Play:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +27,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Options:position")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Options:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -38,7 +39,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/Credits:position")
+tracks/2/path = NodePath("CanvasLayer/Buttons/Credits:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -50,7 +51,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/Quit:position")
+tracks/3/path = NodePath("CanvasLayer/Buttons/Quit:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -62,7 +63,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Buttons/Play:self_modulate")
+tracks/4/path = NodePath("CanvasLayer/Buttons/Play:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -74,7 +75,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Buttons/Options:self_modulate")
+tracks/5/path = NodePath("CanvasLayer/Buttons/Options:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -86,7 +87,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Buttons/Credits:self_modulate")
+tracks/6/path = NodePath("CanvasLayer/Buttons/Credits:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -98,7 +99,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Buttons/Quit:self_modulate")
+tracks/7/path = NodePath("CanvasLayer/Buttons/Quit:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -114,7 +115,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Credits:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Credits:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -126,7 +127,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Credits:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Credits:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -142,7 +143,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Options:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Options:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -154,7 +155,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Options:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Options:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -170,7 +171,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Play:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Play:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -182,7 +183,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Play:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Play:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -198,7 +199,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Quit:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Quit:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -210,7 +211,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Quit:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Quit:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -242,10 +243,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s2f1d")
 
-[node name="Buttons" type="Node2D" parent="."]
-position = Vector2(-410, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Play" parent="Buttons" instance=ExtResource("1_ftydy")]
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 857.0
+offset_bottom = 341.0
+theme_override_fonts/font = ExtResource("2_87ipw")
+theme_override_font_sizes/font_size = 48
+text = "Plateformer Godot"
+
+[node name="Buttons" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -411.0
+offset_top = 1.0
+offset_right = -411.0
+offset_bottom = 1.0
+
+[node name="Play" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
 offset_left = 438.00003
 offset_top = 156.0
 offset_right = 2014.0005
@@ -253,7 +271,8 @@ offset_bottom = 281.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("2_hii65")
 
-[node name="Options" parent="Buttons" instance=ExtResource("1_ftydy")]
+[node name="Options" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
 offset_left = 438.00003
 offset_top = 276.0
 offset_right = 2014.0015
@@ -261,12 +280,13 @@ offset_bottom = 401.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("3_kqsxi")
 
-[node name="Label" parent="Buttons/Options" index="0"]
+[node name="Label" parent="CanvasLayer/Buttons/Options" index="0"]
 offset_left = -234.87573
 offset_right = 298.4568
 text = "Settings"
 
-[node name="Credits" parent="Buttons" instance=ExtResource("1_ftydy")]
+[node name="Credits" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
 offset_left = 438.00003
 offset_top = 395.0
 offset_right = 2014.0002
@@ -275,12 +295,13 @@ scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("4_hptlk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" parent="Buttons/Credits" index="0"]
+[node name="Label" parent="CanvasLayer/Buttons/Credits" index="0"]
 offset_left = -228.62573
 offset_right = 304.7068
 text = "Credits"
 
-[node name="Quit" parent="Buttons" instance=ExtResource("1_ftydy")]
+[node name="Quit" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
 offset_left = 438.00003
 offset_top = 514.0
 offset_right = 2014.0002
@@ -288,33 +309,32 @@ offset_bottom = 639.0
 scale = Vector2(0.32000035, 0.5333331)
 script = ExtResource("5_oqads")
 
-[node name="Label" parent="Buttons/Quit" index="0"]
+[node name="Label" parent="CanvasLayer/Buttons/Quit" index="0"]
 text = "Quit"
 
-[node name="AnimationButton" type="AnimationPlayer" parent="Buttons"]
-root_node = NodePath("../..")
+[node name="AnimationButton" type="AnimationPlayer" parent="CanvasLayer/Buttons"]
+root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_hii65")
 }
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 44.0
-offset_right = 717.0
-offset_bottom = 340.0
-theme_override_fonts/font = ExtResource("2_87ipw")
-theme_override_font_sizes/font_size = 48
-text = "Plateformer Godot"
-
-[node name="SettinsgsMenu" parent="." instance=ExtResource("7_oqads")]
+[node name="SettinsgsMenu" parent="CanvasLayer" instance=ExtResource("7_oqads")]
 visible = false
-layout_mode = 1
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 
-[connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
-[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
-[connection signal="close_requested" from="SettinsgsMenu" to="." method="_on_settinsgs_menu_close_requested"]
+[node name="CreditsMenu" parent="CanvasLayer" instance=ExtResource("8_ejkra")]
+visible = false
 
-[editable path="Buttons/Options"]
-[editable path="Buttons/Credits"]
-[editable path="Buttons/Quit"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Play" to="CanvasLayer/Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="close_requested" from="CanvasLayer/SettinsgsMenu" to="." method="_on_settinsgs_menu_close_requested"]
+[connection signal="close_requested" from="CanvasLayer/CreditsMenu" to="." method="_on_credits_menu_close_requested"]
+
+[editable path="CanvasLayer/Buttons/Options"]
+[editable path="CanvasLayer/Buttons/Credits"]
+[editable path="CanvasLayer/Buttons/Quit"]
