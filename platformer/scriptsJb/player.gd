@@ -10,6 +10,7 @@ var _is_dead: bool = false
 @export var baseLife : int = 3
 @export var _animated_sprite_bow: AnimatedSprite2D
 @export var _heart: Control
+@export var _pause: PackedScene
 var is_invincible : bool = false
 var can_climb:bool = false
 var can_shoot: bool = true
@@ -48,6 +49,11 @@ func _physics_process(delta: float) -> void:
 		shoot()
 		can_shoot = false
 		
+	if Input.is_action_just_pressed("pause"):
+		var pause_menu = _pause.instantiate()
+		_canvas_layer.add_child(pause_menu)
+		get_tree().paused = true
+		
 	if can_climb == true:
 		velocity.y = Input.get_axis("climb_up","climb_down") * _speed
 		
@@ -80,9 +86,10 @@ func _on_timer_timeout() -> void:
 func TakeDamage(value : int) -> void :
 	if is_invincible:
 		return
-	if _actualLife >= 1 and _actualLife < 3:
-		print(_actualLife -1)
+	if _actualLife >= 1 and _actualLife <= 3:
+		print(_actualLife)
 		var _temp: Control = _heart.get_child(_actualLife -1)
+		_temp.visible = false
 	_actualLife -= 1
 	
 	var tween = get_tree().create_tween()

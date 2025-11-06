@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4y6xd5jybwkf"]
+[gd_scene load_steps=9 format=3 uid="uid://cw0ay7f8k655k"]
 
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="1_i3got"]
 [ext_resource type="Script" uid="uid://q46bvanqd56a" path="res://pause_menu.gd" id="1_msjnk"]
@@ -89,4 +89,6 @@ libraries = {
 
 [connection signal="mouse_entered" from="ResumeButton" to="." method="_on_resume_button_mouse_entered"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ResumeButton" to="ResumeButton" method="_on_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
