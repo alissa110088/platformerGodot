@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://5velm0vs8kmg"]
+[gd_scene load_steps=26 format=3 uid="uid://5velm0vs8kmg"]
 
 [ext_resource type="Script" uid="uid://dxirvx2qrq8vy" path="res://scriptsJb/player.gd" id="1_y8w33"]
 [ext_resource type="PackedScene" uid="uid://exqaeqqybwr3" path="res://Scene/Game Over.tscn" id="2_58ae2"]
@@ -11,6 +11,8 @@
 [ext_resource type="Shader" uid="uid://c8frlh5lyn8h6" path="res://Scene/player.tres" id="9_c68nv"]
 [ext_resource type="Texture2D" uid="uid://8qi2iuc10kmv" path="res://Bow and Arrows.png" id="9_ij4jb"]
 [ext_resource type="Texture2D" uid="uid://tr8wt4p8s07y" path="res://asset/Heart_pixelart_(transparent_background).svg.png" id="11_c31lq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c31lq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c31lq"]
 animations = [{
@@ -108,7 +110,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D2:position")
+tracks/0/path = NodePath("Bow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -116,6 +118,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(29.000002, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_c68nv"]
@@ -125,7 +139,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D2:position")
+tracks/0/path = NodePath("Bow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -135,27 +149,48 @@ tracks/0/keys = {
 "values": [Vector2(29, 8.000001), Vector2(29, 21)]
 }
 
+[sub_resource type="Animation" id="Animation_2dof7"]
+resource_name = "invincible"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19166666, 0.40765452, 0.60833335, 0.80765456, 1, 1.0076545, 1.1916666, 1.4076545, 1.6083333, 1.8076546, 2.0076547, 2.01, 2.2016666, 2.4176545, 2.6183333, 2.8176546, 3, 3.0176544, 3.1916666, 3.4076545, 3.6083333, 3.8076546, 4, 4.0076547, 4.1916666, 4.407655, 4.6083336, 4.8076544, 5, 5.0076547, 5.1916666, 5.407655, 5.6083336, 5.8076544, 6.0076547, 6.01, 6.201667, 6.417655, 6.618334, 6.8176546, 7, 7.017655, 7.1916666, 7.407655, 7.6083336, 7.8076544, 8.002157, 8.007654, 8.193824, 8.409812, 8.610491, 8.809812, 9.002157, 9.009811, 9.193824, 9.409812, 9.610491, 9.809812, 10.009811),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.22000003, 0.22000003, 1), Color(0.6500338, 0.40584865, 0.99104446, 1), Color(0.072927184, 0.627634, 0.7450492, 1), Color(2.382472e-06, 0.68282527, 0.15932104, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2dof7"]
 _data = {
 &"RESET": SubResource("Animation_c31lq"),
-&"idle": SubResource("Animation_c68nv")
+&"idle": SubResource("Animation_c68nv"),
+&"invincible": SubResource("Animation_2dof7")
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animated_sprite", "_animated_sprite_bow", "_heart") groups=["Player"]]
 script = ExtResource("1_y8w33")
+jump_impulse = null
 _game_over = ExtResource("2_58ae2")
-_animated_sprite = NodePath("AnimatedSprite2D")
-_animated_sprite_bow = NodePath("AnimatedSprite2D2")
+_animated_sprite = NodePath("PlayerSprite")
+baseLife = null
+_animated_sprite_bow = NodePath("Bow")
 _heart = NodePath("CanvasLayer/Control")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_c31lq")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_c31lq")
 animation = &"idle"
 frame_progress = 0.8687023
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_y8w33")
 
@@ -168,9 +203,7 @@ position = Vector2(27, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(45, 19)
 
-[node name="Timer" type="Timer" parent="."]
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="Bow" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_c31lq")
 position = Vector2(29.000002, 20)
@@ -220,4 +253,6 @@ offset_bottom = 143.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_c31lq")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="TimerShoot" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerShoot" to="." method="_on_timer_timeout"]
