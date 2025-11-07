@@ -1,4 +1,4 @@
-extends TextureButton
+extends ButtonAnim
 
 func _on_mouse_entered() -> void:
 	$AnimationQuit.play("Quit")

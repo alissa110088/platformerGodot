@@ -9,6 +9,7 @@ func resume():
 	$AnimationPauseMenu.play("Open_close")
 
 func _on_resume_button_pressed() -> void:
+	$ResumeButton.release_focus()
 	resume()
 
 
