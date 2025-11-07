@@ -24,14 +24,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	if !_can_move:
+		return
+		
 	_move(delta)
 	move_and_slide()
 
 
 func _move(delta) -> void:
-	if !_can_move:
-		return
-		
+	
 	if global_position.distance_to(_pos1.global_position) < _margin:
 		_animated_sprite_reference.flip_h = false
 		_actual_target_pos = _pos2.global_position

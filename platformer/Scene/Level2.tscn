@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://j1w5dyhparrj"]
+[gd_scene load_steps=20 format=3 uid="uid://j1w5dyhparrj"]
 
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_ofck2"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://1j48ocyho3jh" path="res://Scene/main_menu.tscn" id="12_c7y8q"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="13_vnfqi"]
 [ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="14_c51k5"]
+[ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="16_vnfqi"]
+[ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="17_qxty0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tcr1"]
 texture = ExtResource("2_ofck2")
@@ -769,6 +771,8 @@ position = Vector2(1761, -2938)
 
 [node name="RandomPowerUp" parent="." instance=ExtResource("14_c51k5")]
 position = Vector2(1868, -3036)
+_power_up = Array[PackedScene]([ExtResource("16_vnfqi"), ExtResource("17_qxty0")])
 
 [node name="RandomPowerUp2" parent="." instance=ExtResource("14_c51k5")]
 position = Vector2(1848, -1448)
+_power_up = Array[PackedScene]([ExtResource("16_vnfqi"), ExtResource("17_qxty0")])
