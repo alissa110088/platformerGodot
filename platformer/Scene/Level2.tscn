@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://j1w5dyhparrj"]
+[gd_scene load_steps=24 format=3 uid="uid://j1w5dyhparrj"]
 
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_ofck2"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="16_vnfqi"]
 [ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="17_qxty0"]
 [ext_resource type="Texture2D" uid="uid://wdhksm7670k5" path="res://asset/cloud.png" id="18_qxty0"]
+[ext_resource type="FontFile" uid="uid://bx2746mnav015" path="res://Fonts/pixel.ttf" id="20_sksul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tcr1"]
 texture = ExtResource("2_ofck2")
@@ -507,6 +508,10 @@ tile_size = Vector2i(17, 17)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5tcr1")
 
+[sub_resource type="LabelSettings" id="LabelSettings_4qrxl"]
+font = ExtResource("20_sksul")
+font_size = 50
+
 [node name="Level2" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
@@ -539,7 +544,7 @@ position = Vector2(4519, -3437)
 texture = ExtResource("18_qxty0")
 
 [node name="Player" parent="." node_paths=PackedStringArray("_canvas_layer") instance=ExtResource("1_okb4r")]
-position = Vector2(193, 146)
+position = Vector2(178, 217)
 _canvas_layer = NodePath("../CanvasLayer")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
@@ -833,3 +838,11 @@ _power_up = Array[PackedScene]([ExtResource("16_vnfqi"), ExtResource("17_qxty0")
 [node name="RandomPowerUp2" parent="." instance=ExtResource("14_c51k5")]
 position = Vector2(1848, -1448)
 _power_up = Array[PackedScene]([ExtResource("16_vnfqi"), ExtResource("17_qxty0")])
+
+[node name="Label" type="Label" parent="."]
+offset_left = 89.0
+offset_top = 61.0
+offset_right = 304.0
+offset_bottom = 151.0
+text = "LEVEL 2"
+label_settings = SubResource("LabelSettings_4qrxl")

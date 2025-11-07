@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://script/main_menu.gd" id="1_s2f1d"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
 [ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://script/button_play.gd" id="2_hii65"]
-[ext_resource type="Script" uid="uid://bqwpn42smlv4i" path="res://Button.gd" id="5_ejkra"]
+[ext_resource type="Script" uid="uid://bqwpn42smlv4i" path="res://script/Button.gd" id="5_ejkra"]
 [ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
 [ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/settings_menu.tscn" id="7_oqads"]
 [ext_resource type="PackedScene" uid="uid://ojhoy8mt3ytq" path="res://Scene/credits_menu.tscn" id="8_ejkra"]
@@ -279,7 +279,7 @@ texture_filter = 1
 position = Vector2(866, 354.99997)
 scale = Vector2(25, 25)
 sprite_frames = SubResource("SpriteFrames_4ckpx")
-frame_progress = 0.49751586
+frame_progress = 0.26837793
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

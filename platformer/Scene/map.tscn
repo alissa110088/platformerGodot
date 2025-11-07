@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=25 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://wdhksm7670k5" path="res://asset/cloud.png" id="17_0nsck"]
 [ext_resource type="PackedScene" uid="uid://j1w5dyhparrj" path="res://Scene/Level2.tscn" id="18_nwk8l"]
 [ext_resource type="AudioStream" uid="uid://bxtdnx81d2yv4" path="res://Musics/Level1.mp3" id="19_0nsck"]
+[ext_resource type="FontFile" uid="uid://bx2746mnav015" path="res://Fonts/pixel.ttf" id="20_lb4kn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klihr"]
 texture = ExtResource("2_81yfc")
@@ -502,6 +503,10 @@ sources/0 = SubResource("TileSetAtlasSource_klihr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vj6g"]
 size = Vector2(48.5, 16)
 
+[sub_resource type="LabelSettings" id="LabelSettings_c5dv5"]
+font = ExtResource("20_lb4kn")
+font_size = 50
+
 [node name="Map" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("_canvas_layer") instance=ExtResource("3_ex5br")]
@@ -788,6 +793,14 @@ texture = ExtResource("17_0nsck")
 [node name="DoorEndLevel" parent="." instance=ExtResource("15_klihr")]
 position = Vector2(13124, -308)
 scene = ExtResource("18_nwk8l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 601.0
+offset_top = 38.0
+offset_right = 816.0
+offset_bottom = 128.0
+text = "LEVEL 1"
+label_settings = SubResource("LabelSettings_c5dv5")
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]

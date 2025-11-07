@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://df8mbql3htfx5"]
 
 [ext_resource type="Texture2D" uid="uid://b7va4rk4wiem5" path="res://asset/tile_0002.png" id="1_ldvql"]
-[ext_resource type="Script" uid="uid://d2jhvnsxr2lx6" path="res://scriptsJb/invicible.gd" id="1_mpk1h"]
+[ext_resource type="Script" uid="uid://d2jhvnsxr2lx6" path="res://script/invicible.gd" id="1_mpk1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpk1h"]
 

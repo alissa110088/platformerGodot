@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx1m1gvvtsgb0"]
 
-[ext_resource type="Script" uid="uid://dc835bhu77xya" path="res://scriptsJb/heal.gd" id="1_rqi32"]
+[ext_resource type="Script" uid="uid://dc835bhu77xya" path="res://script/heal.gd" id="1_rqi32"]
 [ext_resource type="Texture2D" uid="uid://tr8wt4p8s07y" path="res://asset/Heart_pixelart_(transparent_background).svg.png" id="2_km5yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tavro"]
