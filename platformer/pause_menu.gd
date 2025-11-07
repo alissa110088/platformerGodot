@@ -1,7 +1,5 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPauseMenu.play_backwards("Open_close")
 	get_tree().paused = false

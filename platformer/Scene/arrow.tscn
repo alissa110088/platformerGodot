@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfs0o7ne7x24r"]
 
 [ext_resource type="Script" uid="uid://dho6rme6pgluc" path="res://scriptsJb/arrow.gd" id="1_hevao"]
-[ext_resource type="Texture2D" uid="uid://pt2l58twqnlu" path="res://arow.tres" id="2_xjl78"]
+[ext_resource type="Texture2D" path="res://arow.tres" id="2_xjl78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjl78"]
 size = Vector2(16.999992, 8.000002)
 
-[node name="Arrow" type="CharacterBody2D" node_paths=PackedStringArray("timer", "sprite")]
+[node name="Arrow" type="CharacterBody2D" node_paths=PackedStringArray("_sprite")]
 position = Vector2(94.000046, 48.000023)
 scale = Vector2(5, 5)
 collision_mask = 8
 script = ExtResource("1_hevao")
-timer = NodePath("Timer")
-sprite = NodePath("Sprite2D")
+_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

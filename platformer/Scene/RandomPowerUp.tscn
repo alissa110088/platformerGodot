@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bowa0tiurbdrk"]
+[gd_scene load_steps=8 format=3 uid="uid://bowa0tiurbdrk"]
 
 [ext_resource type="Texture2D" uid="uid://65v5ucvhpkdh" path="res://asset/tile_0007.png" id="1_4g4ej"]
 [ext_resource type="Script" uid="uid://bib2ndjrvgpu6" path="res://script/random_power_up.gd" id="1_gssd4"]
-[ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="2_qyvwh"]
-[ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="3_4s301"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gssd4"]
 size = Vector2(65, 65)
@@ -48,11 +46,10 @@ _data = {
 &"randomPowerUp": SubResource("Animation_4g4ej")
 }
 
-[node name="RandomPowerUp" type="StaticBody2D" node_paths=PackedStringArray("animation", "spawn_pos")]
+[node name="RandomPowerUp" type="StaticBody2D" node_paths=PackedStringArray("_animation", "_spawn_pos")]
 script = ExtResource("1_gssd4")
-power_up = Array[PackedScene]([ExtResource("2_qyvwh"), ExtResource("3_4s301")])
-animation = NodePath("AnimationPlayer")
-spawn_pos = NodePath("Marker2D")
+_animation = NodePath("AnimationPlayer")
+_spawn_pos = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.42745098, 1, 0, 1)

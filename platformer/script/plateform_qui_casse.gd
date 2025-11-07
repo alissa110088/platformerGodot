@@ -1,4 +1,6 @@
-class_name PlatformCasse extends StaticBody2D
+class_name PlatformCasse
+extends StaticBody2D
+
 @export var _anim: AnimationPlayer
 @export var _timer: Timer
 

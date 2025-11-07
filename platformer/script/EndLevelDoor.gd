@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var pathScene : String 
 var _base_pos: Vector2 = Vector2(193.0, 146.0)
 
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		call_deferred("DeferredFunction")
