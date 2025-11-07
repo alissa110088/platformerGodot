@@ -2,35 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c7fpoud8mnwk6" path="res://asset/UI/title_panel_ui_v1.png" id="1_qakwf"]
 [ext_resource type="Texture2D" uid="uid://ceqdjnuw5oecv" path="res://asset/UI/button_pressed.png" id="2_oxym2"]
-[ext_resource type="Script" uid="uid://b58oyspgantvq" path="res://script/quit_button.gd" id="3_qakwf"]
+[ext_resource type="Script" uid="uid://cmp1x13rflhgw" path="res://script/quit_button.gd" id="3_qakwf"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="4_slf6q"]
-
-[sub_resource type="Animation" id="Animation_t00dy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Quit:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_gqdrk"]
 resource_name = "Quit"
@@ -58,6 +31,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(0.84, 1),
 "update": 0,
 "values": [Color(0.34117648, 0.34117648, 0.34117648, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t00dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.34117648, 0.34117648, 0.34117648, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhdpl"]

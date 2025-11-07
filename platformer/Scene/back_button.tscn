@@ -1,16 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnjcoj46kbcjw"]
+[gd_scene load_steps=8 format=3 uid="uid://kkhl7ggpk40a"]
 
-[ext_resource type="Texture2D" uid="uid://c7fpoud8mnwk6" path="res://asset/UI/title_panel_ui_v1.png" id="1_4156o"]
-[ext_resource type="Texture2D" uid="uid://ceqdjnuw5oecv" path="res://asset/UI/button_pressed.png" id="2_m0vue"]
-[ext_resource type="Script" uid="uid://dbhyuesaeduia" path="res://script/options_button.gd" id="3_4156o"]
-[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="4_8ydlo"]
-
-[sub_resource type="GDScript" id="GDScript_4156o"]
-script/source = "extends Label
-"
+[ext_resource type="Texture2D" uid="uid://c7fpoud8mnwk6" path="res://asset/UI/title_panel_ui_v1.png" id="1_oisar"]
+[ext_resource type="Texture2D" uid="uid://ceqdjnuw5oecv" path="res://asset/UI/button_pressed.png" id="2_hkl8u"]
+[ext_resource type="Script" uid="uid://b58oyspgantvq" path="res://script/back_button.gd" id="3_oisar"]
+[ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="4_3dhrd"]
 
 [sub_resource type="Animation" id="Animation_gqdrk"]
-resource_name = "Options"
+resource_name = "Back"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -27,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Options:self_modulate")
+tracks/1/path = NodePath("Back:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -54,7 +50,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Options:self_modulate")
+tracks/1/path = NodePath("Back:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -66,30 +62,30 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhdpl"]
 _data = {
-&"Options": SubResource("Animation_gqdrk"),
+&"Back": SubResource("Animation_gqdrk"),
 &"RESET": SubResource("Animation_t00dy")
 }
 
-[node name="OptionsButton" type="TextureButton"]
+[node name="BackButton" type="TextureButton"]
 self_modulate = Color(0.34117648, 0.34117648, 0.34117648, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -342.0
+offset_left = -256.0
 offset_top = -28.0
-offset_right = 342.0
+offset_right = 256.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_4156o")
-texture_pressed = ExtResource("2_m0vue")
+texture_normal = ExtResource("1_oisar")
+texture_pressed = ExtResource("2_hkl8u")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("3_4156o")
+script = ExtResource("3_oisar")
 
-[node name="Options" type="Label" parent="."]
+[node name="Back" type="Label" parent="."]
 self_modulate = Color(0.34117648, 0.34117648, 0.34117648, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -103,12 +99,11 @@ offset_right = 31.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_8ydlo")
+theme_override_fonts/font = ExtResource("4_3dhrd")
 theme_override_font_sizes/font_size = 24
-text = "Settings"
-script = SubResource("GDScript_4156o")
+text = "Back"
 
-[node name="AnimationOptions" type="AnimationPlayer" parent="."]
+[node name="AnimationBack" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_yhdpl")
 }

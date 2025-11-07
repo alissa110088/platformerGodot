@@ -1,29 +1,80 @@
-[gd_scene load_steps=10 format=3 uid="uid://1j48ocyho3jh"]
+[gd_scene load_steps=13 format=3 uid="uid://1j48ocyho3jh"]
 
 [ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
+[ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://script/main_menu.gd" id="1_s2f1d"]
 [ext_resource type="FontFile" uid="uid://cfvlrek57wpfn" path="res://Fonts/Daydream DEMO.otf" id="2_87ipw"]
 [ext_resource type="Script" uid="uid://dufivxm2pv677" path="res://script/button_play.gd" id="2_hii65"]
 [ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
+[ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/settings_menu.tscn" id="7_oqads"]
+[ext_resource type="PackedScene" uid="uid://ojhoy8mt3ytq" path="res://Scene/credits_menu.tscn" id="8_ejkra"]
 
 [sub_resource type="Animation" id="Animation_hptlk"]
 resource_name = "animation_credits"
-length = 0.5
-
-[sub_resource type="Animation" id="Animation_pvidh"]
-resource_name = "animation_options"
-length = 0.5
-
-[sub_resource type="Animation" id="Animation_87ipw"]
-resource_name = "animation_play"
-length = 0.5
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Play:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Credits:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.84, 1),
+"update": 0,
+"values": [Vector2(438.00003, 395), Vector2(474.305, 395)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Buttons/Credits:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pvidh"]
+resource_name = "animation_options"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Buttons/Options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.84, 1),
+"update": 0,
+"values": [Vector2(438.00003, 276), Vector2(474.305, 276)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Buttons/Options:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0.84),
+"update": 0,
+"values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_87ipw"]
+resource_name = "animation_play"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Buttons/Play:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.84, 1),
 "update": 0,
 "values": [Vector2(39.00003, 185), Vector2(57.00003, 185)]
@@ -31,11 +82,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Play:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Play:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 0.84),
 "update": 0,
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.83889705, 0.83889705, 0.838897, 1)]
@@ -43,15 +94,15 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_oqads"]
 resource_name = "animation_quit"
-length = 0.5
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Quit:position")
+tracks/0/path = NodePath("CanvasLayer/Buttons/Quit:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.84, 1),
 "update": 0,
 "values": [Vector2(35.00003, 467), Vector2(55, 463)]
@@ -59,11 +110,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Quit:self_modulate")
+tracks/1/path = NodePath("CanvasLayer/Buttons/Quit:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Color(0.34018356, 0.34018356, 0.34018356, 1), Color(0.8392157, 0.8392157, 0.8392157, 1)]
@@ -88,63 +139,104 @@ offset_right = -1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s2f1d")
 
-[node name="Buttons" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Play" parent="Buttons" instance=ExtResource("1_ftydy")]
-layout_mode = 1
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 857.0
+offset_bottom = 341.0
+theme_override_fonts/font = ExtResource("2_87ipw")
+theme_override_font_sizes/font_size = 48
+text = "Plateformer Godot"
+
+[node name="Buttons" type="Control" parent="CanvasLayer"]
+layout_mode = 3
 anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -492.0
-offset_top = 147.00002
-offset_right = 1084.0
-offset_bottom = 272.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = -411.0
+offset_top = 1.0
+offset_right = -411.0
+offset_bottom = 1.0
+
+[node name="Play" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
+offset_left = 438.00003
+offset_top = 156.0
+offset_right = 2014.0005
+offset_bottom = 281.0
 scale = Vector2(0.32000035, 0.5333331)
 pivot_offset = Vector2(775, 65)
 script = ExtResource("2_hii65")
 
-[node name="Quit" parent="Buttons" instance=ExtResource("1_ftydy")]
+[node name="Options" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -490.0
-offset_top = 254.0
-offset_right = 1086.0
-offset_bottom = 379.00043
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 935.0
+offset_top = 294.00003
+offset_right = 2511.0
+offset_bottom = 419.00003
+scale = Vector2(0.32000035, 0.5333331)
+
+[node name="Label" parent="CanvasLayer/Buttons/Options" index="0"]
+offset_left = -213.71436
+offset_top = -51.249996
+offset_right = 319.61816
+offset_bottom = 159.75
+text = "Options
+"
+
+[node name="Credits" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
+offset_left = 438.00003
+offset_top = 395.0
+offset_right = 2014.0002
+offset_bottom = 520.0
+scale = Vector2(0.32000035, 0.5333331)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" parent="CanvasLayer/Buttons/Credits" index="0"]
+offset_left = -228.62573
+offset_right = 304.7068
+text = "Credits"
+
+[node name="Quit" parent="CanvasLayer/Buttons" instance=ExtResource("1_ftydy")]
+layout_mode = 1
+offset_left = 438.00003
+offset_top = 514.0
+offset_right = 2014.0002
+offset_bottom = 639.0
 scale = Vector2(0.32000035, 0.5333331)
 pivot_offset = Vector2(775, 65)
 script = ExtResource("5_oqads")
 
-[node name="Label" parent="Buttons/Quit" index="0"]
+[node name="Label" parent="CanvasLayer/Buttons/Quit" index="0"]
 text = "Quit"
 
-[node name="AnimationButton" type="AnimationPlayer" parent="Buttons"]
-root_node = NodePath("../..")
+[node name="AnimationButton" type="AnimationPlayer" parent="CanvasLayer/Buttons"]
+root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_hii65")
 }
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.009548611
-anchor_top = 0.06790123
-anchor_right = 0.7447917
-anchor_bottom = 0.20833333
-theme_override_fonts/font = ExtResource("2_87ipw")
-theme_override_font_sizes/font_size = 48
-text = "Plateformer Godot"
-metadata/_edit_use_anchors_ = true
+[node name="SettinsgsMenu" parent="CanvasLayer" instance=ExtResource("7_oqads")]
+visible = false
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 
-[editable path="Buttons/Quit"]
+[node name="CreditsMenu" parent="CanvasLayer" instance=ExtResource("8_ejkra")]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/Buttons/Play" to="CanvasLayer/Buttons/Play" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Buttons/Options" to="CanvasLayer/Buttons/Play" method="_on_options_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="close_requested" from="CanvasLayer/SettinsgsMenu" to="." method="_on_settinsgs_menu_close_requested"]
+[connection signal="close_requested" from="CanvasLayer/CreditsMenu" to="." method="_on_credits_menu_close_requested"]
+
+[editable path="CanvasLayer/Buttons/Options"]
+[editable path="CanvasLayer/Buttons/Credits"]
+[editable path="CanvasLayer/Buttons/Quit"]

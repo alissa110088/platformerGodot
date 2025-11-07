@@ -10,3 +10,13 @@ func resume():
 
 func _on_resume_button_pressed() -> void:
 	resume()
+
+
+func _on_options_button_pressed() -> void:
+	$SettinsgsMenu.show()
+
+func _on_settinsgs_menu_close_requested() -> void:
+	$SettinsgsMenu.hide()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
