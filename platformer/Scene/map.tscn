@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=21 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://d1d6tkqewl5wd" path="res://Scene/ladder.tscn" id="10_ysgi6"]
 [ext_resource type="PackedScene" uid="uid://bhhr5bdggtecg" path="res://Scene/FlyingEnemy.tscn" id="12_e7yu7"]
 [ext_resource type="Texture2D" uid="uid://cdekca5kbi0as" path="res://asset/[CITYPNG.COM]HD Cartoon Realistic White Cloud Transparent PNG - 2000x2000.png" id="14_htkc4"]
-[ext_resource type="PackedScene" path="res://Scene/DoorEndLevel.tscn" id="15_klihr"]
+[ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="14_ymvkr"]
+[ext_resource type="PackedScene" uid="uid://d4nptgnyoeunu" path="res://Scene/DoorEndLevel.tscn" id="15_klihr"]
+[ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="15_nwk8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
 texture = ExtResource("2_81yfc")
@@ -589,11 +591,10 @@ position = Vector2(4850, -158)
 
 [node name="enemyBasic" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="enemyBasic" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("8_qftbs")]
+[node name="BasicEnemy" parent="enemyBasic" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("8_qftbs")]
 position = Vector2(2835, 31)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-baseLife = 5
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBasic"]
 position = Vector2(2377, 31)
@@ -604,11 +605,10 @@ position = Vector2(2968, 31)
 [node name="enemyBasic2" type="Node2D" parent="."]
 position = Vector2(4518, -505)
 
-[node name="BasicEnemy" parent="enemyBasic2" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("8_qftbs")]
+[node name="BasicEnemy" parent="enemyBasic2" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("8_qftbs")]
 position = Vector2(2835, 31)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-baseLife = 5
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBasic2"]
 position = Vector2(2767, 31)
@@ -619,10 +619,10 @@ position = Vector2(2952, 31)
 [node name="enemyBomb" type="Node2D" parent="."]
 position = Vector2(5103, -678)
 
-[node name="BombEnemy" parent="enemyBomb" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_wo3cx")]
+[node name="BombEnemy" parent="enemyBomb" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_wo3cx")]
 position = Vector2(2831, 35)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBomb"]
 position = Vector2(2555, 35)
@@ -698,12 +698,12 @@ position = Vector2(527, 26)
 position = Vector2(893, 26)
 
 [node name="FlyingEnemy" type="Node2D" parent="."]
-position = Vector2(7727, -809)
+position = Vector2(7689, -886)
 
-[node name="FlyingEnemy" parent="FlyingEnemy" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("12_e7yu7")]
+[node name="FlyingEnemy" parent="FlyingEnemy" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("12_e7yu7")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy"]
 position = Vector2(-3, 0)
@@ -711,10 +711,10 @@ position = Vector2(-3, 0)
 [node name="FlyingEnemy2" type="Node2D" parent="."]
 position = Vector2(11729, -516)
 
-[node name="FlyingEnemy" parent="FlyingEnemy2" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("12_e7yu7")]
+[node name="FlyingEnemy" parent="FlyingEnemy2" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("12_e7yu7")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy2"]
 position = Vector2(-3, 0)
@@ -725,10 +725,10 @@ position = Vector2(-3, 0)
 position = Vector2(181, -132)
 scale = Vector2(4, 4)
 
-[node name="BombEnemy" parent="bomb" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_wo3cx")]
+[node name="BombEnemy" parent="bomb" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_wo3cx")]
 position = Vector2(425, -132)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D2" type="Marker2D" parent="bomb"]
 position = Vector2(705, -132)
@@ -736,12 +736,15 @@ scale = Vector2(4, 4)
 
 [node name="RandomPowerUp2" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(5631, -412)
+_power_up = Array[PackedScene]([ExtResource("14_ymvkr"), ExtResource("15_nwk8l")])
 
 [node name="RandomPowerUp3" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(11051, -474)
+_power_up = Array[PackedScene]([ExtResource("15_nwk8l"), ExtResource("14_ymvkr")])
 
 [node name="RandomPowerUp" parent="." instance=ExtResource("10_wo3cx")]
 position = Vector2(2484, -62)
+_power_up = Array[PackedScene]([ExtResource("14_ymvkr"), ExtResource("15_nwk8l")])
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -1

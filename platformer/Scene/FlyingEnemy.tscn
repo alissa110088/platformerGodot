@@ -83,17 +83,17 @@ _data = {
 &"RESET": SubResource("Animation_ksvhl")
 }
 
-[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cooldown", "anchor", "animationPlayerReference", "particleReference", "animatedSpriteReference") groups=["Enemy"]]
+[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("_cooldown", "_anchor", "_animation_player_reference", "_particle_reference", "_animated_sprite_reference") groups=["Enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_b2af3")
-cooldown = NodePath("Timer")
-anchor = NodePath("Anchor")
-baseLife = 5
-animationPlayerReference = NodePath("AnimationPlayer")
-particleReference = NodePath("GPUParticles2D")
-animatedSpriteReference = NodePath("Sprite2D")
+_cooldown = NodePath("Timer")
+_anchor = NodePath("Anchor")
+_base_life = 1
+_animation_player_reference = NodePath("AnimationPlayer")
+_particle_reference = NodePath("GPUParticles2D")
+_animated_sprite_reference = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
