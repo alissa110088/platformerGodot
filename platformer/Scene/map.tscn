@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cdekca5kbi0as" path="res://asset/[CITYPNG.COM]HD Cartoon Realistic White Cloud Transparent PNG - 2000x2000.png" id="14_htkc4"]
 [ext_resource type="PackedScene" uid="uid://d4nptgnyoeunu" path="res://Scene/DoorEndLevel.tscn" id="15_klihr"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex5br"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klihr"]
 texture = ExtResource("2_81yfc")
 texture_region_size = Vector2i(17, 17)
 1:0/0 = 0
@@ -493,7 +493,7 @@ texture_region_size = Vector2i(17, 17)
 [sub_resource type="TileSet" id="TileSet_5mejs"]
 tile_size = Vector2i(17, 17)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ex5br")
+sources/0 = SubResource("TileSetAtlasSource_klihr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vj6g"]
 size = Vector2(48.5, 16)
@@ -779,7 +779,7 @@ texture = ExtResource("14_htkc4")
 
 [node name="DoorEndLevel" parent="." instance=ExtResource("15_klihr")]
 position = Vector2(13124, -308)
-pathScene = "res://Scene/main_menu.tscn"
+pathScene = "res://Scene/Level2.tscn"
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]
