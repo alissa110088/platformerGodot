@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://1j48ocyho3jh"]
+[gd_scene load_steps=22 format=3 uid="uid://1j48ocyho3jh"]
 
 [ext_resource type="PackedScene" uid="uid://cyawnqlxdarjb" path="res://Scene/button.tscn" id="1_ftydy"]
 [ext_resource type="Script" uid="uid://crsadewjrirwj" path="res://script/main_menu.gd" id="1_s2f1d"]
@@ -8,6 +8,13 @@
 [ext_resource type="Script" uid="uid://crgt65vklubck" path="res://script/button_quit.gd" id="5_oqads"]
 [ext_resource type="PackedScene" uid="uid://b4dpc1cui0de0" path="res://Scene/settings_menu.tscn" id="7_oqads"]
 [ext_resource type="PackedScene" uid="uid://ojhoy8mt3ytq" path="res://Scene/credits_menu.tscn" id="8_ejkra"]
+[ext_resource type="Texture2D" uid="uid://bn4c36ixfugus" path="res://asset/tile_0261.png" id="9_klvvj"]
+[ext_resource type="Texture2D" uid="uid://ydkm17dtepng" path="res://asset/tile_0262.png" id="10_47k5r"]
+[ext_resource type="Texture2D" uid="uid://3pjw28s1w4g" path="res://asset/tile_0263.png" id="11_hag5k"]
+[ext_resource type="Texture2D" uid="uid://dom60vnmf7oe2" path="res://asset/tile_0144.png" id="12_shpw1"]
+[ext_resource type="Texture2D" uid="uid://8byg2lhlbm4k" path="res://asset/tile_0145.png" id="13_34sut"]
+[ext_resource type="Texture2D" uid="uid://clfslf7h0km1m" path="res://asset/tile_0146.png" id="14_fqtvk"]
+[ext_resource type="Texture2D" uid="uid://deperbljdr18m" path="res://asset/tile_0085.png" id="15_p1wrw"]
 
 [sub_resource type="Animation" id="Animation_hptlk"]
 resource_name = "animation_credits"
@@ -129,7 +136,38 @@ _data = {
 &"animation_quit": SubResource("Animation_oqads")
 }
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ckpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_klvvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_47k5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hag5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_shpw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_34sut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fqtvk")
+}],
+"loop": true,
+"name": &"ground",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_animated_sprite_reference")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,6 +179,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s2f1d")
+_animated_sprite_reference = NodePath("AnimatedSprite2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -233,6 +272,19 @@ offset_bottom = 1.0
 
 [node name="CreditsMenu" parent="CanvasLayer" instance=ExtResource("8_ejkra")]
 visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(866, 354.99997)
+scale = Vector2(25, 25)
+sprite_frames = SubResource("SpriteFrames_4ckpx")
+frame_progress = 0.4435783
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(988.99994, 749)
+scale = Vector2(35.239998, 25)
+texture = ExtResource("15_p1wrw")
 
 [connection signal="pressed" from="CanvasLayer/Buttons/Play" to="CanvasLayer/Buttons/Play" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Buttons/Options" to="CanvasLayer/Buttons/Play" method="_on_options_mouse_entered"]

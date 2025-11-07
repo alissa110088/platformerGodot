@@ -1,6 +1,8 @@
 extends Control
+@export var _animated_sprite_reference : AnimatedSprite2D
 
 func _ready() -> void:
+	_animated_sprite_reference.play("default")
 	$CanvasLayer/SettinsgsMenu.visible = false
 
 func _on_options_pressed() -> void:
