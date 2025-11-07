@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var pathScene : String 
+@export var scene : PackedScene
 var _base_pos: Vector2 = Vector2(193.0, 146.0)
 
 
@@ -10,4 +10,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func DeferredFunction() -> void:
 	Player.check_point_pos = _base_pos
-	get_tree().change_scene_to_file(pathScene)
+	get_tree().change_scene_to_packed(scene)

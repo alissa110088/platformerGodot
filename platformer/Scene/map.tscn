@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://csr1wrjy6naqc"]
+[gd_scene load_steps=22 format=3 uid="uid://csr1wrjy6naqc"]
 
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_81yfc"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="2_ex5br"]
@@ -10,13 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://r6q5fxgfqpl6" path="res://Scene/BasicEnemy.tscn" id="8_qftbs"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="9_5vj6g"]
 [ext_resource type="PackedScene" uid="uid://e4my1ha11ay1" path="res://Scene/BombEnemy.tscn" id="9_wo3cx"]
-[ext_resource type="PackedScene" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
+[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="10_wo3cx"]
 [ext_resource type="PackedScene" uid="uid://d1d6tkqewl5wd" path="res://Scene/ladder.tscn" id="10_ysgi6"]
 [ext_resource type="PackedScene" uid="uid://bhhr5bdggtecg" path="res://Scene/FlyingEnemy.tscn" id="12_e7yu7"]
 [ext_resource type="Texture2D" uid="uid://cdekca5kbi0as" path="res://asset/[CITYPNG.COM]HD Cartoon Realistic White Cloud Transparent PNG - 2000x2000.png" id="14_htkc4"]
 [ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="14_ymvkr"]
 [ext_resource type="PackedScene" uid="uid://d4nptgnyoeunu" path="res://Scene/DoorEndLevel.tscn" id="15_klihr"]
 [ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="15_nwk8l"]
+[ext_resource type="PackedScene" uid="uid://j1w5dyhparrj" path="res://Scene/Level2.tscn" id="18_nwk8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klihr"]
 texture = ExtResource("2_81yfc")
@@ -782,7 +783,7 @@ texture = ExtResource("14_htkc4")
 
 [node name="DoorEndLevel" parent="." instance=ExtResource("15_klihr")]
 position = Vector2(13124, -308)
-pathScene = "res://Scene/Level2.tscn"
+scene = ExtResource("18_nwk8l")
 
 [editable path="DeathZone/DeathZone3"]
 [editable path="DeathZone/DeathZone4"]

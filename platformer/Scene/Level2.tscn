@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://j1w5dyhparrj"]
+[gd_scene load_steps=18 format=3 uid="uid://j1w5dyhparrj"]
 
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_ofck2"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c542eit1xip81" path="res://Scene/deathZone/DeathZone.tscn" id="10_c51k5"]
 [ext_resource type="PackedScene" uid="uid://d4nptgnyoeunu" path="res://Scene/DoorEndLevel.tscn" id="11_c7y8q"]
 [ext_resource type="PackedScene" uid="uid://b6urhxwr48gvj" path="res://Scene/deathZone/PiqueQuiTombe.tscn" id="12_2ddut"]
+[ext_resource type="PackedScene" uid="uid://1j48ocyho3jh" path="res://Scene/main_menu.tscn" id="12_c7y8q"]
 [ext_resource type="PackedScene" uid="uid://c78e7gx28mss0" path="res://Scene/CheckPoint.tscn" id="13_vnfqi"]
-[ext_resource type="PackedScene" path="res://Scene/RandomPowerUp.tscn" id="14_c51k5"]
+[ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="14_c51k5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tcr1"]
 texture = ExtResource("2_ofck2")
@@ -625,11 +626,10 @@ scale = Vector2(5.32, 4)
 [node name="enemyBasic" type="Node2D" parent="."]
 position = Vector2(42, -3061)
 
-[node name="BasicEnemy" parent="enemyBasic" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("7_fi3jw")]
+[node name="BasicEnemy" parent="enemyBasic" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("7_fi3jw")]
 position = Vector2(2062, 205)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-baseLife = 5
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBasic"]
 position = Vector2(1962, 205)
@@ -640,11 +640,10 @@ position = Vector2(2164, 205)
 [node name="enemyBasic3" type="Node2D" parent="."]
 position = Vector2(-1572, -684)
 
-[node name="BasicEnemy" parent="enemyBasic3" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("7_fi3jw")]
+[node name="BasicEnemy" parent="enemyBasic3" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("7_fi3jw")]
 position = Vector2(2062, 205)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-baseLife = 5
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBasic3"]
 position = Vector2(1962, 205)
@@ -655,11 +654,10 @@ position = Vector2(2164, 205)
 [node name="enemyBasic2" type="Node2D" parent="."]
 position = Vector2(1235, -3314)
 
-[node name="BasicEnemy" parent="enemyBasic2" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("7_fi3jw")]
+[node name="BasicEnemy" parent="enemyBasic2" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("7_fi3jw")]
 position = Vector2(2062, 205)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
-baseLife = 5
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBasic2"]
 position = Vector2(1787, 205)
@@ -670,10 +668,10 @@ position = Vector2(2501, 205)
 [node name="enemyBomb" type="Node2D" parent="."]
 position = Vector2(-390, -2959)
 
-[node name="BombEnemy" parent="enemyBomb" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("8_v4jrf")]
+[node name="BombEnemy" parent="enemyBomb" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("8_v4jrf")]
 position = Vector2(2831, 20)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBomb"]
 position = Vector2(2683, 20)
@@ -684,10 +682,10 @@ position = Vector2(2924, 20)
 [node name="enemyBomb2" type="Node2D" parent="."]
 position = Vector2(546, -3129)
 
-[node name="BombEnemy" parent="enemyBomb2" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("8_v4jrf")]
+[node name="BombEnemy" parent="enemyBomb2" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("8_v4jrf")]
 position = Vector2(2831, 20)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D2")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D2")
 
 [node name="Marker2D" type="Marker2D" parent="enemyBomb2"]
 position = Vector2(2424, 20)
@@ -698,10 +696,10 @@ position = Vector2(3248, 20)
 [node name="FlyingEnemy" type="Node2D" parent="."]
 position = Vector2(2618, -3224)
 
-[node name="FlyingEnemy" parent="FlyingEnemy" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_7mi2m")]
+[node name="FlyingEnemy" parent="FlyingEnemy" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_7mi2m")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy"]
 position = Vector2(-3, 0)
@@ -709,10 +707,10 @@ position = Vector2(-3, 0)
 [node name="FlyingEnemy2" type="Node2D" parent="."]
 position = Vector2(3477, -3378)
 
-[node name="FlyingEnemy" parent="FlyingEnemy2" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_7mi2m")]
+[node name="FlyingEnemy" parent="FlyingEnemy2" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_7mi2m")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy2"]
 position = Vector2(-3, 0)
@@ -720,10 +718,10 @@ position = Vector2(-3, 0)
 [node name="FlyingEnemy3" type="Node2D" parent="."]
 position = Vector2(4344, -3281)
 
-[node name="FlyingEnemy" parent="FlyingEnemy3" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_7mi2m")]
+[node name="FlyingEnemy" parent="FlyingEnemy3" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_7mi2m")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy3"]
 position = Vector2(-3, 0)
@@ -731,10 +729,10 @@ position = Vector2(-3, 0)
 [node name="FlyingEnemy4" type="Node2D" parent="."]
 position = Vector2(1510, -2167)
 
-[node name="FlyingEnemy" parent="FlyingEnemy4" node_paths=PackedStringArray("pos1", "pos2") instance=ExtResource("9_7mi2m")]
+[node name="FlyingEnemy" parent="FlyingEnemy4" node_paths=PackedStringArray("_pos1", "_pos2") instance=ExtResource("9_7mi2m")]
 position = Vector2(0, 4)
-pos1 = NodePath("../Marker2D")
-pos2 = NodePath("../Marker2D")
+_pos1 = NodePath("../Marker2D")
+_pos2 = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="FlyingEnemy4"]
 position = Vector2(-3, 0)
@@ -753,7 +751,7 @@ position = Vector2(3466, -702)
 
 [node name="DoorEndLevel" parent="." instance=ExtResource("11_c7y8q")]
 position = Vector2(4824, -3025)
-pathScene = "res://Scene/main_menu.tscn"
+scene = ExtResource("12_c7y8q")
 
 [node name="PiqueQuiTombe" parent="." instance=ExtResource("12_2ddut")]
 position = Vector2(1290, -164)
