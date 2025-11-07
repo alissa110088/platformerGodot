@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vwhptnp4ub0"
+path="res://.godot/imported/Kubbi - Digestive biscuit ♫ NO COPYRIGHT 8-bit Music (mp3cut.net).mp3-318259b73fb3dd53ff503910c5afc45d.mp3str"
+
+[deps]
+
+source_file="res://Kubbi - Digestive biscuit ♫ NO COPYRIGHT 8-bit Music (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Kubbi - Digestive biscuit ♫ NO COPYRIGHT 8-bit Music (mp3cut.net).mp3-318259b73fb3dd53ff503910c5afc45d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

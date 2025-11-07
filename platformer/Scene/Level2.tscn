@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://j1w5dyhparrj"]
+[gd_scene load_steps=22 format=3 uid="uid://j1w5dyhparrj"]
 
 [ext_resource type="PackedScene" uid="uid://5velm0vs8kmg" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="Texture2D" uid="uid://b64gqf58riv67" path="res://asset/monochrome_tilemap_transparent.png" id="2_ofck2"]
+[ext_resource type="AudioStream" uid="uid://euuub58p4er2" path="res://Musics/Level2.mp3" id="3_it0h0"]
 [ext_resource type="PackedScene" uid="uid://cq3fawhwo14lw" path="res://Scene/plateform/platformeRebond.tscn" id="3_ofck2"]
 [ext_resource type="PackedScene" uid="uid://d272anvirluuf" path="res://Scene/plateform/platformeMovante.tscn" id="4_lxk71"]
 [ext_resource type="PackedScene" uid="uid://y67xi8sjbftg" path="res://Scene/plateform/plateformQuiCasse.tscn" id="5_waaq7"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bowa0tiurbdrk" path="res://Scene/RandomPowerUp.tscn" id="14_c51k5"]
 [ext_resource type="PackedScene" uid="uid://bx1m1gvvtsgb0" path="res://Scene/heart.tscn" id="16_vnfqi"]
 [ext_resource type="PackedScene" uid="uid://df8mbql3htfx5" path="res://Scene/invicible.tscn" id="17_qxty0"]
+[ext_resource type="Texture2D" uid="uid://wdhksm7670k5" path="res://asset/cloud.png" id="18_qxty0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tcr1"]
 texture = ExtResource("2_ofck2")
@@ -507,9 +509,44 @@ sources/0 = SubResource("TileSetAtlasSource_5tcr1")
 
 [node name="Level2" type="Node2D"]
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.95, 0.95)
+scroll_offset = Vector2(203, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(940, -783)
+texture = ExtResource("18_qxty0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(2663, -2207)
+texture = ExtResource("18_qxty0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(209, -1490)
+texture = ExtResource("18_qxty0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(1683, -3582)
+texture = ExtResource("18_qxty0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(3053, -3646)
+texture = ExtResource("18_qxty0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(4519, -3437)
+texture = ExtResource("18_qxty0")
+
 [node name="Player" parent="." node_paths=PackedStringArray("_canvas_layer") instance=ExtResource("1_okb4r")]
 position = Vector2(193, 146)
 _canvas_layer = NodePath("../CanvasLayer")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-6, 12)
+stream = ExtResource("3_it0h0")
+autoplay = true
+parameters/looping = true
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -741,6 +778,26 @@ position = Vector2(-3, 0)
 
 [node name="DeathZone" parent="." instance=ExtResource("10_c51k5")]
 position = Vector2(-808, 976)
+
+[node name="DeathZone5" parent="." instance=ExtResource("10_c51k5")]
+position = Vector2(-2286.0002, -514)
+rotation = 1.586982
+
+[node name="DeathZone6" parent="." instance=ExtResource("10_c51k5")]
+position = Vector2(-2251, -3341)
+rotation = 1.586982
+
+[node name="DeathZone7" parent="." instance=ExtResource("10_c51k5")]
+position = Vector2(3717, -444.00024)
+rotation = 1.586982
+
+[node name="DeathZone8" parent="." instance=ExtResource("10_c51k5")]
+position = Vector2(5305.0005, -3498.0002)
+rotation = 1.586982
+
+[node name="DeathZone9" parent="." instance=ExtResource("10_c51k5")]
+position = Vector2(3735, -1107.0002)
+rotation = 1.586982
 
 [node name="DeathZone2" parent="." instance=ExtResource("10_c51k5")]
 position = Vector2(2247, 976)
